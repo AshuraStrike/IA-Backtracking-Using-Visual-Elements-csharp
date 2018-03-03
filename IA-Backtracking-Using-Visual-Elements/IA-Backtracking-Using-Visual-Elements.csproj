@@ -90,5 +90,35 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\bedrock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\brick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\cobblestone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\dirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\door_spruce_lower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\farmland_dry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\grass_path_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\magma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\stone_andesite_smooth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\stone_granite.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,7 +25,7 @@ namespace IA_Backtracking_Using_Visual_Elements
             // Cambia la textura en el pictureBox como preview
             // debe hacerlo cuando se cambie el terreno en el comboBox
             // el nombre va sin corchetes
-            ///pictureBoxTerrain.Image = Properties.Resources.[Nombres];
+            pictureBoxTerrain.Image = Properties.Resources.magma;
 
             filterGround();
         }

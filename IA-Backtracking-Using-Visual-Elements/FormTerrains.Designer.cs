@@ -42,7 +42,7 @@
             // PreviousButton
             // 
             this.PreviousButton.Location = new System.Drawing.Point(158, 304);
-            this.PreviousButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PreviousButton.Margin = new System.Windows.Forms.Padding(2);
             this.PreviousButton.Name = "PreviousButton";
             this.PreviousButton.Size = new System.Drawing.Size(62, 48);
             this.PreviousButton.TabIndex = 13;
@@ -72,7 +72,7 @@
             // NextButton
             // 
             this.NextButton.Location = new System.Drawing.Point(224, 304);
-            this.NextButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NextButton.Margin = new System.Windows.Forms.Padding(2);
             this.NextButton.Name = "NextButton";
             this.NextButton.Size = new System.Drawing.Size(62, 48);
             this.NextButton.TabIndex = 10;
@@ -105,7 +105,7 @@
             "Rio",
             "Jungla"});
             this.GroundTypeComboBox.Location = new System.Drawing.Point(159, 106);
-            this.GroundTypeComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GroundTypeComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.GroundTypeComboBox.Name = "GroundTypeComboBox";
             this.GroundTypeComboBox.Size = new System.Drawing.Size(110, 21);
             this.GroundTypeComboBox.TabIndex = 8;
@@ -114,7 +114,7 @@
             // 
             this.GroundListBox.FormattingEnabled = true;
             this.GroundListBox.Location = new System.Drawing.Point(11, 11);
-            this.GroundListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GroundListBox.Margin = new System.Windows.Forms.Padding(2);
             this.GroundListBox.Name = "GroundListBox";
             this.GroundListBox.Size = new System.Drawing.Size(130, 342);
             this.GroundListBox.TabIndex = 7;
