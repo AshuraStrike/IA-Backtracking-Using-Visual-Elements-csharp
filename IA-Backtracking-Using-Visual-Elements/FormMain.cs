@@ -94,14 +94,14 @@ namespace IA_Backtracking_Using_Visual_Elements
                     for (int y = 0; y < mapa.Count; y++)
                     {
                         //formGraphics.DrawRectangle(pen, panelMapa.Location.X - CELL_WIDTH - 1, panelMapa.Location.Y+(CELL_WIDTH*y), CELL_WIDTH, CELL_WIDTH);
-                        string text = a + "," + (y+1);
+                        string text = (y+1).ToString();
                         formGraphics.DrawString(text, font, brushRed, panelMap.Location.X - CELL_WIDTH - 1, panelMap.Location.Y+(y*CELL_WIDTH) + (CELL_WIDTH / 2) - 7f);
                     }
 
                     for (int x = 0; x < mapa[0].Count; x++)
                     {
                         //formGraphics.DrawRectangle(pen, panelMapa.Location.X+(x*CELL_WIDTH), panelMapa.Location.Y - CELL_WIDTH - 1, CELL_WIDTH, CELL_WIDTH);
-                        string text = a + "," + 1;
+                        string text = a.ToString();
                         formGraphics.DrawString(text, font, brushRed, panelMap.Location.X+(x*CELL_WIDTH), panelMap.Location.Y - (CELL_WIDTH/2)-7f);
                         a += (char)1;
                     }
@@ -146,5 +146,17 @@ namespace IA_Backtracking_Using_Visual_Elements
             }
         }
 
+        private void GroundButton_Click(object sender, EventArgs e)
+        {
+            if (mapa.Count < 1)
+            {
+                MessageBox.Show("Debe cargar un mapa primero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                FormTerrains GroundWindow = new FormTerrains(ref mapa);
+                GroundWindow.ShowDialog();
+            }
+        }
     }
 }

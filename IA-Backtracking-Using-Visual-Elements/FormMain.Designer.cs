@@ -31,6 +31,7 @@
             this.panelMap = new System.Windows.Forms.Panel();
             this.labelRoute = new System.Windows.Forms.Label();
             this.buttonExamine = new System.Windows.Forms.Button();
+            this.GroundButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panelMap
@@ -61,11 +62,23 @@
             this.buttonExamine.UseVisualStyleBackColor = true;
             this.buttonExamine.Click += new System.EventHandler(this.buttonExamine_Click);
             // 
+            // GroundButton
+            // 
+            this.GroundButton.Location = new System.Drawing.Point(587, 73);
+            this.GroundButton.Margin = new System.Windows.Forms.Padding(2);
+            this.GroundButton.Name = "GroundButton";
+            this.GroundButton.Size = new System.Drawing.Size(100, 52);
+            this.GroundButton.TabIndex = 3;
+            this.GroundButton.Text = "Terrenos";
+            this.GroundButton.UseVisualStyleBackColor = true;
+            this.GroundButton.Click += new System.EventHandler(this.GroundButton_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 622);
+            this.Controls.Add(this.GroundButton);
             this.Controls.Add(this.buttonExamine);
             this.Controls.Add(this.labelRoute);
             this.Controls.Add(this.panelMap);
@@ -83,6 +96,7 @@
         private System.Windows.Forms.Panel panelMap;
         private System.Windows.Forms.Label labelRoute;
         private System.Windows.Forms.Button buttonExamine;
+        private System.Windows.Forms.Button GroundButton;
     }
 }
 
