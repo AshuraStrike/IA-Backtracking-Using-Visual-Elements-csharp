@@ -21,6 +21,41 @@ namespace IA_Backtracking_Using_Visual_Elements
             InitializeComponent();
 
             this.myMap = myMap;
+            filterGround();
+        }
+
+        //method filter the repeted numbers
+        void filterGround()
+        {
+            int j;
+            filteredMapList.Add(myMap[0][0].Value);
+
+            for (int i = 0; i < myMap.Count; i++)
+            {
+                j = 0;
+
+                do
+                {
+                    if (!filteredMapList.Contains(myMap[i][j].Value))
+                    {
+                        filteredMapList.Add(myMap[i][j].Value);
+                    }
+
+                    j++;
+                }
+                while (j < filteredMapList.Count);
+            }
+        }
+
+        private void FormTerrains_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < filteredMapList.Count; i++)
+            {
+                GroundListBox.Items.Add(filteredMapList[i]);
+            }
+
+            //set index in listBox for comfort
+            GroundListBox.SetSelected(0, true);
         }
     }
 }

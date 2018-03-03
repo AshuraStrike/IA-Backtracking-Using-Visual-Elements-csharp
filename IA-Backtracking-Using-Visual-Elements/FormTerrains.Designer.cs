@@ -39,10 +39,10 @@
             // 
             // PreviousButton
             // 
-            this.PreviousButton.Location = new System.Drawing.Point(158, 304);
-            this.PreviousButton.Margin = new System.Windows.Forms.Padding(2);
+            this.PreviousButton.Location = new System.Drawing.Point(211, 374);
+            this.PreviousButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PreviousButton.Name = "PreviousButton";
-            this.PreviousButton.Size = new System.Drawing.Size(62, 48);
+            this.PreviousButton.Size = new System.Drawing.Size(83, 59);
             this.PreviousButton.TabIndex = 13;
             this.PreviousButton.Text = "Anterior";
             this.PreviousButton.UseVisualStyleBackColor = true;
@@ -50,29 +50,27 @@
             // ActualGroundLabel
             // 
             this.ActualGroundLabel.AutoSize = true;
-            this.ActualGroundLabel.Location = new System.Drawing.Point(159, 48);
-            this.ActualGroundLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ActualGroundLabel.Location = new System.Drawing.Point(212, 59);
             this.ActualGroundLabel.Name = "ActualGroundLabel";
-            this.ActualGroundLabel.Size = new System.Drawing.Size(104, 13);
+            this.ActualGroundLabel.Size = new System.Drawing.Size(138, 17);
             this.ActualGroundLabel.TabIndex = 12;
             this.ActualGroundLabel.Text = "Actual Ground Label";
             // 
             // GroundLabel
             // 
             this.GroundLabel.AutoSize = true;
-            this.GroundLabel.Location = new System.Drawing.Point(159, 34);
-            this.GroundLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.GroundLabel.Location = new System.Drawing.Point(212, 42);
             this.GroundLabel.Name = "GroundLabel";
-            this.GroundLabel.Size = new System.Drawing.Size(76, 13);
+            this.GroundLabel.Size = new System.Drawing.Size(101, 17);
             this.GroundLabel.TabIndex = 11;
             this.GroundLabel.Text = "Terreno actual";
             // 
             // NextButton
             // 
-            this.NextButton.Location = new System.Drawing.Point(225, 304);
-            this.NextButton.Margin = new System.Windows.Forms.Padding(2);
+            this.NextButton.Location = new System.Drawing.Point(300, 374);
+            this.NextButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(62, 48);
+            this.NextButton.Size = new System.Drawing.Size(83, 59);
             this.NextButton.TabIndex = 10;
             this.NextButton.Text = "Siguiente";
             this.NextButton.UseVisualStyleBackColor = true;
@@ -80,10 +78,9 @@
             // TypeGroundLabel
             // 
             this.TypeGroundLabel.AutoSize = true;
-            this.TypeGroundLabel.Location = new System.Drawing.Point(159, 87);
-            this.TypeGroundLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TypeGroundLabel.Location = new System.Drawing.Point(212, 107);
             this.TypeGroundLabel.Name = "TypeGroundLabel";
-            this.TypeGroundLabel.Size = new System.Drawing.Size(108, 13);
+            this.TypeGroundLabel.Size = new System.Drawing.Size(146, 17);
             this.TypeGroundLabel.TabIndex = 9;
             this.TypeGroundLabel.Text = "Elija el tipo de terreno";
             // 
@@ -102,26 +99,27 @@
             "Pantano",
             "Rio",
             "Jungla"});
-            this.GroundTypeComboBox.Location = new System.Drawing.Point(159, 106);
-            this.GroundTypeComboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.GroundTypeComboBox.Location = new System.Drawing.Point(212, 130);
+            this.GroundTypeComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GroundTypeComboBox.Name = "GroundTypeComboBox";
-            this.GroundTypeComboBox.Size = new System.Drawing.Size(110, 21);
+            this.GroundTypeComboBox.Size = new System.Drawing.Size(145, 24);
             this.GroundTypeComboBox.TabIndex = 8;
             // 
             // GroundListBox
             // 
             this.GroundListBox.FormattingEnabled = true;
-            this.GroundListBox.Location = new System.Drawing.Point(11, 11);
-            this.GroundListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.GroundListBox.ItemHeight = 16;
+            this.GroundListBox.Location = new System.Drawing.Point(15, 14);
+            this.GroundListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GroundListBox.Name = "GroundListBox";
-            this.GroundListBox.Size = new System.Drawing.Size(130, 342);
+            this.GroundListBox.Size = new System.Drawing.Size(172, 420);
             this.GroundListBox.TabIndex = 7;
             // 
             // FormTerrains
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 365);
+            this.ClientSize = new System.Drawing.Size(403, 449);
             this.Controls.Add(this.PreviousButton);
             this.Controls.Add(this.ActualGroundLabel);
             this.Controls.Add(this.GroundLabel);
@@ -129,8 +127,10 @@
             this.Controls.Add(this.TypeGroundLabel);
             this.Controls.Add(this.GroundTypeComboBox);
             this.Controls.Add(this.GroundListBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormTerrains";
             this.Text = "FormTerrains";
+            this.Load += new System.EventHandler(this.FormTerrains_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
