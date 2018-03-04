@@ -41,6 +41,7 @@
             this.panelMap.Name = "panelMap";
             this.panelMap.Size = new System.Drawing.Size(480, 480);
             this.panelMap.TabIndex = 0;
+            this.panelMap.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMap_Paint);
             this.panelMap.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelMap_MouseClick);
             // 
             // labelRoute
@@ -86,6 +87,7 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMain";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormMain_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 

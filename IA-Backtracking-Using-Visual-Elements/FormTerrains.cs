@@ -92,11 +92,12 @@ namespace IA_Backtracking_Using_Visual_Elements
                 {
                     for(int j = 0; j < myMap[0].Count; j++)
                     {
-                        for(int z = 0; z < myMap.Count; z++)
+                        for(int z = 0; z < noRepeatNumber.Count; z++)
                         {
-                            myMap[i][j] = noRepeatNumber[z];
-                            Console.WriteLine("noRepeat: " + myMap[i][j].TerrainId + " " + myMap[i][j].TerrainName + " " + myMap[i][j].texture);
-                            break;
+                            if (myMap[i][j].TerrainId == noRepeatNumber[z].TerrainId)
+                            {
+                                myMap[i][j] = noRepeatNumber[z];
+                            }
                         }
                     }
                 }
