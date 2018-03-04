@@ -111,7 +111,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                     {
                         for(int j = 0; j < mapa[i].Count; j++)
                         {
-                            System.Diagnostics.Debug.Write(mapa[i][j].Value+" ");
+                            System.Diagnostics.Debug.Write(mapa[i][j].TerrainId + " ");
                         }
                         System.Diagnostics.Debug.WriteLine(" ");
                     }
@@ -126,7 +126,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                 // Not Final Version
                 Graphics graphics = panelMap.CreateGraphics();
 
-                String text = mapa[e.Y / CELL_WIDTH][e.X / CELL_WIDTH].Value.ToString();
+                String text = mapa[e.Y / CELL_WIDTH][e.X / CELL_WIDTH].TerrainId.ToString();
 
                 int cell_x = e.X - (e.X % CELL_WIDTH);
                 int cell_y = e.Y - (e.Y % CELL_WIDTH);
@@ -142,7 +142,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                 }
                 toolTip = new ToolTip();
 
-                toolTip.Show(mapa[e.Y / CELL_WIDTH][e.X / CELL_WIDTH].Value.ToString(), panelMap, e.X, e.Y-20, 1000);
+                toolTip.Show(mapa[e.Y / CELL_WIDTH][e.X / CELL_WIDTH].TerrainId.ToString(), panelMap, e.X, e.Y-20, 1000);
             }
         }
 

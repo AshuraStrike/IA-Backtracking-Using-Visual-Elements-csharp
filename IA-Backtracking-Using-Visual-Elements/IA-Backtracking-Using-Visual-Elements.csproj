@@ -120,5 +120,14 @@
   <ItemGroup>
     <None Include="Textures\stone_granite.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\forest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\sand.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
