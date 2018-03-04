@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +17,6 @@ namespace IA_Backtracking_Using_Visual_Elements
         const int CELL_WIDTH = 32;
 
         SolidBrush brushRed;
-        SolidBrush brushWhite;
         Pen pen;
         Font font;
         Graphics graphics;
@@ -25,10 +25,18 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         Graphics formGraphics;
 
+        Character character;
+        Character creature1;
+        Character creature2;
+        Character creature3;
+
+        Point currentXY = new Point(0,0);
+
         public FormMain()
         {
             InitializeComponent();
-            labelRoute.Text ="";
+            KeyPreview = true;
+            labelRoute.Text = "";
             panelMap.Width = 0;
             panelMap.Height = 0;
 
@@ -36,17 +44,10 @@ namespace IA_Backtracking_Using_Visual_Elements
             mapa = new Map();
 
             // Graphic elements
-            brushWhite = new SolidBrush(Color.White);
             brushRed = new SolidBrush(Color.Red);
             pen = new Pen(Color.Black);
-            graphics = panelMap.CreateGraphics();
 
             font = new Font("Arial", 8.0f, FontStyle.Regular);
-        }
-
-        private void drawOnPanel()
-        {
-            
         }
 
         private void buttonExamine_Click(object sender, EventArgs e)
@@ -68,8 +69,6 @@ namespace IA_Backtracking_Using_Visual_Elements
 
                 mapa.Clear();
 
-                panelMap.CreateGraphics().Clear(Color.White);
-
                 // El lector invoca a su método para llenar la estructura mapa
                 if (!lector.fillMap(ref mapa))
                 {
@@ -80,33 +79,38 @@ namespace IA_Backtracking_Using_Visual_Elements
                     labelRoute.Text = "Archivo Inválido!";
                 }
             }
+            this.Focus();
         }
 
         private void panelMap_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                // Not Final Version
-                graphics = panelMap.CreateGraphics();
-
-                String text = mapa[e.Y / CELL_WIDTH][e.X / CELL_WIDTH].TerrainId.ToString();
-
-                int cell_x = e.X - (e.X % CELL_WIDTH);
-                int cell_y = e.Y - (e.Y % CELL_WIDTH);
-
-                graphics.FillRectangle(brushWhite, cell_x, cell_y, CELL_WIDTH, CELL_WIDTH);
-                graphics.DrawRectangle(pen, cell_x, cell_y, CELL_WIDTH, CELL_WIDTH);
-                graphics.DrawString(text, font, brushRed, cell_x, cell_y);
+                currentXY.X = e.X / CELL_WIDTH;
+                currentXY.Y = e.Y / CELL_WIDTH;
+                char a = 'A';
+                a += (char) currentXY.X;
+                labelSelectedX.Text = a.ToString();
+                labelSelectedY.Text = (currentXY.Y+1).ToString();
             }
-            else if(e.Button == MouseButtons.Right)
+            else if (e.Button == MouseButtons.Right)
             {
                 if (toolTip != null)
                 {
                     toolTip.Dispose();
                 }
+                char letter = 'A';
+                letter += (char)((e.X / CELL_WIDTH));
+                String text = letter + ((e.Y / CELL_WIDTH) + 1).ToString();
+                if (mapa[0][0].TerrainName != null)
+                {
+                    toolTip = new ToolTip();
+                    text += '\n' + mapa[e.Y / CELL_WIDTH][e.X / CELL_WIDTH].TerrainName;
+                }
+
                 toolTip = new ToolTip();
 
-                toolTip.Show(mapa[e.Y / CELL_WIDTH][e.X / CELL_WIDTH].TerrainId.ToString(), panelMap, e.X, e.Y-20, 1000);
+                toolTip.Show(text, panelMap, e.X, e.Y - 20, 1000);
             }
         }
 
@@ -166,9 +170,9 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         private void panelMap_Paint(object sender, PaintEventArgs e)
         {
-            if (mapa[0][0].texture!=null)
+            graphics = panelMap.CreateGraphics();
+            if (mapa.Count<1)
             {
-                Graphics graphics = panelMap.CreateGraphics();
                 for (int i = 0; i < mapa.Count; i++)
                 {
                     for (int j = 0; j < mapa[0].Count; j++)
@@ -177,6 +181,63 @@ namespace IA_Backtracking_Using_Visual_Elements
                     }
                 }
             }
+            if(character != null)
+            graphics.DrawImage(character.characterImg, character.coordinateX * CELL_WIDTH, character.coordinateY * CELL_WIDTH);
+        }
+
+        
+
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+            buttonExamine.Enabled = false;
+            buttonPlay.Enabled = false;
+            GroundButton.Enabled = false;
+        }
+
+        private void FormMain_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Down:
+                case Keys.Up:
+                case Keys.Left:
+                case Keys.Right:
+                    e.IsInputKey = true;
+                    break;
+            }
+        }
+
+        private void FormMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (character != null)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Left:
+                        if (character.coordinateX > 0)
+                            character.coordinateX -= 1;
+                        break;
+                    case Keys.Right:
+                        if (character.coordinateX < mapa[0].Count - 1)
+                            character.coordinateX += 1;
+                        break;
+                    case Keys.Up:
+                        if (character.coordinateY > 0)
+                            character.coordinateY -= 1;
+                        break;
+                    case Keys.Down:
+                        if (character.coordinateY < mapa.Count - 1)
+                            character.coordinateY += 1;
+                        break;
+                }
+                panelMap.Refresh();
+            }
+        }
+
+        private void buttonCharacter_Click(object sender, EventArgs e)
+        {
+            character = new Character("Tu gfa", Properties.Resources.magma, currentXY.X, currentXY.Y);
+            panelMap.Refresh();
         }
     }
 }
