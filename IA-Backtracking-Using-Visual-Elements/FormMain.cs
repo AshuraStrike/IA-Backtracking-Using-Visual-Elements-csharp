@@ -118,6 +118,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                 {
                     toolTip = new ToolTip();
                     text += '\n' + mapa[e.Y / CELL_WIDTH][e.X / CELL_WIDTH].TerrainName;
+                    text += '\n' +mapa[e.Y / CELL_WIDTH][e.X / CELL_WIDTH].listStepsString();
                 }
 
                 toolTip = new ToolTip();
@@ -137,8 +138,10 @@ namespace IA_Backtracking_Using_Visual_Elements
                 FormTerrains GroundWindow = new FormTerrains(ref mapa);
                 GroundWindow.ShowDialog();
                 panelMap.Refresh();
-
-                noRepeat = GroundWindow.GetNoRepeat;
+                if (GroundWindow.GetSuccess)
+                {
+                    noRepeat = GroundWindow.GetNoRepeat;
+                }
 
                 buttonCharacter.Enabled = true;
             }
@@ -194,6 +197,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                     for (int j = 0; j < mapa[0].Count; j++)
                     {
                         graphics.DrawImage(mapa[i][j].texture, j * CELL_WIDTH, i * CELL_WIDTH);
+                        graphics.DrawString(mapa[i][j].listStepsString(), font,brushRed, j * CELL_WIDTH, i*CELL_WIDTH);
                     }
                 }
             }
@@ -206,7 +210,8 @@ namespace IA_Backtracking_Using_Visual_Elements
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             if (!playing && character!=null && finalXY.X>-1)
-            {
+            {   //Empezar
+                resetMapNumbers();
                 buttonExamine.Enabled = false;
                 buttonInitialCord.Enabled = false;
                 buttonPlay.Text = "STOP";
@@ -214,9 +219,12 @@ namespace IA_Backtracking_Using_Visual_Elements
                 buttonCharacter.Enabled = false;
                 buttonFinalCoord.Enabled = false;
                 playing = !playing;
+
+                character.currentStep = 1;
+                mapa[character.coordinateY][character.coordinateX].listSteps.Add(character.currentStep);
             }
             else if(playing && character != null)
-            {
+            {   //Dejar de jugar
                 buttonExamine.Enabled = true;
                 buttonInitialCord.Enabled = true;
                 buttonPlay.Text = "Play";
@@ -228,11 +236,11 @@ namespace IA_Backtracking_Using_Visual_Elements
             if(character == null)
             {
                 MessageBox.Show("Debe haber un personaje para jugar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            if(finalXY.X == -1)
+            }else if(finalXY.X == -1)
             {
                 MessageBox.Show("Debe haber un estado final", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            panelMap.Refresh();
         }
 
         private void FormMain_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -254,26 +262,80 @@ namespace IA_Backtracking_Using_Visual_Elements
         {
             if (character != null)
             {
+                bool moved = false;
                 switch (e.KeyCode)
                 {
                     case Keys.Left:
-                        if (character.coordinateX > 0)
-                            character.coordinateX -= 1;
+                        //Revisa la lista del personaje
+                        for (int i=0;i<character.idCostList.Count;i++)
+                        {
+                            //Si encuentra el id
+                            if ((character.coordinateX - 1)>-1 && character.idCostList[i].id == mapa[character.coordinateY][character.coordinateX-1].TerrainId)
+                            {
+                                if (character.idCostList[i].cost > -1)
+                                {
+                                    if (character.coordinateX > 0) character.coordinateX -= 1;
+                                    moved = true;
+                                }
+                            }
+                        }
                         break;
                     case Keys.Right:
-                        if (character.coordinateX < mapa[0].Count - 1)
-                            character.coordinateX += 1;
+                        //Revisa la lista del personaje
+                        for (int i = 0; i < character.idCostList.Count; i++)
+                        {
+                            //Si encuentra el id
+                            if ((character.coordinateX + 1) < mapa[0].Count && character.idCostList[i].id == mapa[character.coordinateY][character.coordinateX + 1].TerrainId)
+                            {
+                                if (character.idCostList[i].cost > -1)
+                                {
+                                    if (character.coordinateX < mapa[0].Count - 1) character.coordinateX += 1;
+                                    moved = true;
+                                }
+                            }
+                        }
                         break;
                     case Keys.Up:
-                        if (character.coordinateY > 0)
-                            character.coordinateY -= 1;
+                        //Revisa la lista del personaje
+                        for (int i = 0; i < character.idCostList.Count; i++)
+                        {
+                            //Si encuentra el id
+                            if ((character.coordinateY - 1) > -1 && character.idCostList[i].id == mapa[character.coordinateY - 1][character.coordinateX].TerrainId)
+                            {
+                                if (character.idCostList[i].cost > -1)
+                                {
+                                    if (character.coordinateY > 0) character.coordinateY -= 1;
+                                    moved = true;
+                                }
+                            }
+                        }
                         break;
                     case Keys.Down:
-                        if (character.coordinateY < mapa.Count - 1)
-                            character.coordinateY += 1;
+                        //Revisa la lista del personaje
+                        for (int i = 0; i < character.idCostList.Count; i++)
+                        {
+                            //Si encuentra el id
+                            if ((character.coordinateY + 1) < mapa.Count && character.idCostList[i].id == mapa[character.coordinateY + 1][character.coordinateX].TerrainId)
+                            {
+                                if (character.idCostList[i].cost > -1)
+                                {
+                                    if (character.coordinateY < mapa.Count - 1) character.coordinateY += 1;
+                                    moved = true;
+                                }
+                            }
+                        }
                         break;
                 }
+                if (moved) {
+                    character.currentStep++;
+                    mapa[character.coordinateY][character.coordinateX].listSteps.Add(character.currentStep);
+                }
                 panelMap.Refresh();
+                if(character.coordinateX == finalXY.X && character.coordinateY == finalXY.Y)
+                {
+                    MessageBox.Show("Llegaste al punto final","Finished!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    buttonPlay.PerformClick();
+                }
             }
         }
 
@@ -316,6 +378,8 @@ namespace IA_Backtracking_Using_Visual_Elements
             {
                 finalXY.X = currentXY.X;
                 finalXY.Y = currentXY.Y;
+
+                MessageBox.Show("Posicion final: " +labelSelectedX.Text+","+labelSelectedY.Text,"Posicion final seleccionada!",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
 
@@ -328,8 +392,19 @@ namespace IA_Backtracking_Using_Visual_Elements
 
                 character.coordinateX = currentXY.X;
                 character.coordinateY = currentXY.Y;
-
                 panelMap.Refresh();
+                MessageBox.Show("Posicion inicial: " + labelSelectedX.Text + "," + labelSelectedY.Text, "Posicion inicial seleccionada!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        public void resetMapNumbers()
+        {
+            for(int i = 0; i < mapa.Count; i++)
+            {
+                for (int j = 0; j< mapa.Count; j++)
+                {
+                    mapa[i][j].listSteps = new List<int>();
+                }
             }
         }
     }

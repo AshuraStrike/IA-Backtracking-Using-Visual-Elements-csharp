@@ -48,7 +48,7 @@ namespace IA_Backtracking_Using_Visual_Elements
         {
             for (int i = 0; i < noRepeat.Count; i++)
             {
-                ListBoxTerrain.Items.Add(noRepeat[i].TerrainId);
+                ListBoxTerrain.Items.Add(noRepeat[i].TerrainName);
             }
 
             //set index in listBox for comfort
@@ -62,12 +62,12 @@ namespace IA_Backtracking_Using_Visual_Elements
             {
                 if (CheckBoxNA.Checked)
                 {
-                    idCost = new IdCost(Int32.Parse(ListBoxTerrain.Items[ListBoxTerrain.SelectedIndex].ToString()), -1);
+                    idCost = new IdCost(Int32.Parse(noRepeat[ListBoxTerrain.SelectedIndex].TerrainId.ToString()), -1);
                     textBoxCost.Text = "";
                 }
                 else
                 {
-                    idCost = new IdCost(Int32.Parse(ListBoxTerrain.Items[ListBoxTerrain.SelectedIndex].ToString()), Int32.Parse(textBoxCost.Text));
+                    idCost = new IdCost(Int32.Parse(noRepeat[ListBoxTerrain.SelectedIndex].TerrainId.ToString()), Int32.Parse(textBoxCost.Text));
                     textBoxCost.Text = "";
                 }
 

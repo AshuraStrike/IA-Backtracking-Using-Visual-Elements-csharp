@@ -16,6 +16,8 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         List<Cell> noRepeatNumber = new List<Cell>();
 
+        bool success;
+
         public FormTerrains(ref Map myMap)
         {
             InitializeComponent();
@@ -26,6 +28,8 @@ namespace IA_Backtracking_Using_Visual_Elements
 
             GroundListBox.Enabled = false;
             GroundTypeComboBox.SelectedIndex = 0;
+
+            success = false;
         }
 
         //Filtra los terrenos para que no se repitan
@@ -83,7 +87,6 @@ namespace IA_Backtracking_Using_Visual_Elements
                 Console.WriteLine("Lista: " + noRepeatNumber[i].TerrainId + " " + noRepeatNumber[i].TerrainName + " " + noRepeatNumber[i].texture);
             }
 
-            //Cierra la ventana cuando hemos terminado
             int last = GroundListBox.Items.Count - 1;
             if (GroundListBox.SelectedIndex == last)
             {
@@ -96,11 +99,13 @@ namespace IA_Backtracking_Using_Visual_Elements
                         {
                             if (myMap[i][j].TerrainId == noRepeatNumber[z].TerrainId)
                             {
-                                myMap[i][j] = noRepeatNumber[z];
+                                myMap[i][j] = new Cell(noRepeatNumber[z].TerrainId, noRepeatNumber[z].TerrainName, noRepeatNumber[z].texture);
                             }
                         }
                     }
                 }
+                success = true;
+            //Cierra la ventana cuando hemos terminado
                 this.Close();
             }
             else
@@ -177,10 +182,6 @@ namespace IA_Backtracking_Using_Visual_Elements
         }
 
         public List<Cell> GetNoRepeat { get { return noRepeatNumber; } }
-
-        private void pictureBoxTerrain_Click(object sender, EventArgs e)
-        {
-
-        }
+        public bool GetSuccess { get { return success; } }
     }
 }

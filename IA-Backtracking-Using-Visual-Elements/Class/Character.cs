@@ -12,6 +12,7 @@ namespace IA_Backtracking_Using_Visual_Elements
         public Image characterImg;
         public int coordinateX;
         public int coordinateY;
+        public int currentStep;
 
         public List<IdCost> idCostList;
 
