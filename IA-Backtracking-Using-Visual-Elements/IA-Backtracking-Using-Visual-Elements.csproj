@@ -54,6 +54,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNewCharacter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewCharacter.Designer.cs">
+      <DependentUpon>FormNewCharacter.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTerrains.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Textures\sand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\man.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

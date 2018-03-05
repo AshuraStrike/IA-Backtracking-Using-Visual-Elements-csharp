@@ -30,7 +30,11 @@ namespace IA_Backtracking_Using_Visual_Elements
         Character creature2;
         Character creature3;
 
-        Point currentXY = new Point(0,0);
+        Point currentXY;
+        Point initXY;
+        Point finalXY;
+
+        bool playing;
 
         public FormMain()
         {
@@ -48,6 +52,11 @@ namespace IA_Backtracking_Using_Visual_Elements
             pen = new Pen(Color.Black);
 
             font = new Font("Arial", 8.0f, FontStyle.Regular);
+
+            currentXY = new Point(0,0);
+            initXY = new Point(0, 0);
+
+            playing = false;
         }
 
         private void buttonExamine_Click(object sender, EventArgs e)
@@ -78,8 +87,15 @@ namespace IA_Backtracking_Using_Visual_Elements
                     labelRoute.ForeColor = Color.Red;
                     labelRoute.Text = "Archivo Inválido!";
                 }
+                finalXY.X = -1;
+                finalXY.Y = -1;
+                buttonCharacter.Enabled = true;
+                buttonFinalCoord.Enabled = true;
+                buttonCreature1.Enabled = true;
+                buttonCreature2.Enabled = true;
+                buttonCreature3.Enabled = true;
             }
-            this.Focus();
+            panelMap.Refresh();
         }
 
         private void panelMap_MouseClick(object sender, MouseEventArgs e)
@@ -171,7 +187,7 @@ namespace IA_Backtracking_Using_Visual_Elements
         private void panelMap_Paint(object sender, PaintEventArgs e)
         {
             graphics = panelMap.CreateGraphics();
-            if (mapa.Count<1)
+            if (mapa[0][0].texture!=null)
             {
                 for (int i = 0; i < mapa.Count; i++)
                 {
@@ -189,21 +205,45 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            buttonExamine.Enabled = false;
-            buttonPlay.Enabled = false;
-            GroundButton.Enabled = false;
+            if (!playing && character!=null && finalXY.X>-1)
+            {
+                buttonExamine.Enabled = false;
+                buttonPlay.Text = "STOP";
+                GroundButton.Enabled = false;
+                buttonCharacter.Enabled = false;
+                buttonFinalCoord.Enabled = false;
+                buttonCreature1.Enabled = false;
+                buttonCreature2.Enabled = false;
+                buttonCreature3.Enabled = false;
+                playing = !playing;
+            }
+            else if(playing && character != null)
+            {
+                buttonExamine.Enabled = true;
+                buttonPlay.Text = "Play";
+                GroundButton.Enabled = true;
+                buttonCharacter.Enabled = true;
+                buttonFinalCoord.Enabled = true;
+                buttonCreature1.Enabled = true;
+                buttonCreature2.Enabled = true;
+                buttonCreature3.Enabled = true;
+                playing = !playing;
+            }
         }
 
         private void FormMain_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Down:
-                case Keys.Up:
-                case Keys.Left:
-                case Keys.Right:
-                    e.IsInputKey = true;
-                    break;
+            if (playing) {
+                switch (e.KeyCode)
+                {
+                    case Keys.Down:
+                    case Keys.Up:
+                    case Keys.Left:
+                    case Keys.Right:
+                        e.IsInputKey = true;
+                        break;
+
+                }
             }
         }
 
@@ -236,8 +276,22 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         private void buttonCharacter_Click(object sender, EventArgs e)
         {
-            character = new Character("Tu gfa", Properties.Resources.magma, currentXY.X, currentXY.Y);
-            panelMap.Refresh();
+            if (mapa[0][0].texture != null)
+            {
+                initXY.X = currentXY.X;
+                initXY.Y = currentXY.Y;
+                character = new Character("Tu gfa", Properties.Resources.man, currentXY.X, currentXY.Y);
+                panelMap.Refresh();
+            }
+        }
+
+        private void buttonFinalCoord_Click(object sender, EventArgs e)
+        {
+            if (mapa[0][0].texture != null)
+            {
+                finalXY.X = currentXY.X;
+                finalXY.Y = currentXY.Y;
+            }
         }
     }
 }

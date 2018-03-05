@@ -40,6 +40,7 @@
             this.labelCurrentXY = new System.Windows.Forms.Label();
             this.labelSelectedX = new System.Windows.Forms.Label();
             this.labelSelectedY = new System.Windows.Forms.Label();
+            this.buttonFinalCoord = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panelMap
@@ -78,7 +79,7 @@
             this.GroundButton.Location = new System.Drawing.Point(587, 73);
             this.GroundButton.Margin = new System.Windows.Forms.Padding(2);
             this.GroundButton.Name = "GroundButton";
-            this.GroundButton.Size = new System.Drawing.Size(100, 52);
+            this.GroundButton.Size = new System.Drawing.Size(100, 34);
             this.GroundButton.TabIndex = 3;
             this.GroundButton.TabStop = false;
             this.GroundButton.Text = "Terrenos";
@@ -88,9 +89,9 @@
             // 
             // buttonPlay
             // 
-            this.buttonPlay.Location = new System.Drawing.Point(587, 130);
+            this.buttonPlay.Location = new System.Drawing.Point(587, 112);
             this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(75, 23);
+            this.buttonPlay.Size = new System.Drawing.Size(100, 34);
             this.buttonPlay.TabIndex = 4;
             this.buttonPlay.TabStop = false;
             this.buttonPlay.Text = "Play";
@@ -100,9 +101,10 @@
             // 
             // buttonCharacter
             // 
-            this.buttonCharacter.Location = new System.Drawing.Point(587, 159);
+            this.buttonCharacter.Enabled = false;
+            this.buttonCharacter.Location = new System.Drawing.Point(587, 152);
             this.buttonCharacter.Name = "buttonCharacter";
-            this.buttonCharacter.Size = new System.Drawing.Size(75, 23);
+            this.buttonCharacter.Size = new System.Drawing.Size(100, 34);
             this.buttonCharacter.TabIndex = 5;
             this.buttonCharacter.TabStop = false;
             this.buttonCharacter.Text = "Character";
@@ -112,34 +114,37 @@
             // 
             // buttonCreature1
             // 
-            this.buttonCreature1.Location = new System.Drawing.Point(587, 188);
+            this.buttonCreature1.Enabled = false;
+            this.buttonCreature1.Location = new System.Drawing.Point(587, 232);
             this.buttonCreature1.Name = "buttonCreature1";
             this.buttonCreature1.Size = new System.Drawing.Size(75, 23);
             this.buttonCreature1.TabIndex = 6;
             this.buttonCreature1.TabStop = false;
-            this.buttonCreature1.Text = "Play";
+            this.buttonCreature1.Text = "Creatura 1";
             this.buttonCreature1.UseVisualStyleBackColor = true;
             this.buttonCreature1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.FormMain_PreviewKeyDown);
             // 
             // buttonCreature2
             // 
-            this.buttonCreature2.Location = new System.Drawing.Point(587, 217);
+            this.buttonCreature2.Enabled = false;
+            this.buttonCreature2.Location = new System.Drawing.Point(587, 261);
             this.buttonCreature2.Name = "buttonCreature2";
             this.buttonCreature2.Size = new System.Drawing.Size(75, 23);
             this.buttonCreature2.TabIndex = 7;
             this.buttonCreature2.TabStop = false;
-            this.buttonCreature2.Text = "Play";
+            this.buttonCreature2.Text = "Creatura 2";
             this.buttonCreature2.UseVisualStyleBackColor = true;
             this.buttonCreature2.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.FormMain_PreviewKeyDown);
             // 
             // buttonCreature3
             // 
-            this.buttonCreature3.Location = new System.Drawing.Point(587, 246);
+            this.buttonCreature3.Enabled = false;
+            this.buttonCreature3.Location = new System.Drawing.Point(587, 290);
             this.buttonCreature3.Name = "buttonCreature3";
             this.buttonCreature3.Size = new System.Drawing.Size(75, 23);
             this.buttonCreature3.TabIndex = 8;
             this.buttonCreature3.TabStop = false;
-            this.buttonCreature3.Text = "Play";
+            this.buttonCreature3.Text = "Creatura 3";
             this.buttonCreature3.UseVisualStyleBackColor = true;
             this.buttonCreature3.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.FormMain_PreviewKeyDown);
             // 
@@ -157,24 +162,37 @@
             this.labelSelectedX.AutoSize = true;
             this.labelSelectedX.Location = new System.Drawing.Point(623, 17);
             this.labelSelectedX.Name = "labelSelectedX";
-            this.labelSelectedX.Size = new System.Drawing.Size(17, 13);
+            this.labelSelectedX.Size = new System.Drawing.Size(14, 13);
             this.labelSelectedX.TabIndex = 10;
-            this.labelSelectedX.Text = "X:";
+            this.labelSelectedX.Text = "A";
             // 
             // labelSelectedY
             // 
             this.labelSelectedY.AutoSize = true;
-            this.labelSelectedY.Location = new System.Drawing.Point(623, 30);
+            this.labelSelectedY.Location = new System.Drawing.Point(643, 17);
             this.labelSelectedY.Name = "labelSelectedY";
-            this.labelSelectedY.Size = new System.Drawing.Size(17, 13);
+            this.labelSelectedY.Size = new System.Drawing.Size(13, 13);
             this.labelSelectedY.TabIndex = 11;
-            this.labelSelectedY.Text = "Y:";
+            this.labelSelectedY.Text = "0";
+            // 
+            // buttonFinalCoord
+            // 
+            this.buttonFinalCoord.Enabled = false;
+            this.buttonFinalCoord.Location = new System.Drawing.Point(587, 192);
+            this.buttonFinalCoord.Name = "buttonFinalCoord";
+            this.buttonFinalCoord.Size = new System.Drawing.Size(75, 34);
+            this.buttonFinalCoord.TabIndex = 12;
+            this.buttonFinalCoord.TabStop = false;
+            this.buttonFinalCoord.Text = "Coordenada final";
+            this.buttonFinalCoord.UseVisualStyleBackColor = true;
+            this.buttonFinalCoord.Click += new System.EventHandler(this.buttonFinalCoord_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 622);
+            this.Controls.Add(this.buttonFinalCoord);
             this.Controls.Add(this.labelSelectedY);
             this.Controls.Add(this.labelSelectedX);
             this.Controls.Add(this.labelCurrentXY);
@@ -214,6 +232,7 @@
         private System.Windows.Forms.Label labelCurrentXY;
         private System.Windows.Forms.Label labelSelectedX;
         private System.Windows.Forms.Label labelSelectedY;
+        private System.Windows.Forms.Button buttonFinalCoord;
     }
 }
 
