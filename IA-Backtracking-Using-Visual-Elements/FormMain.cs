@@ -26,15 +26,15 @@ namespace IA_Backtracking_Using_Visual_Elements
         Graphics formGraphics;
 
         Character character;
-        Character creature1;
-        Character creature2;
-        Character creature3;
 
         Point currentXY;
         Point initXY;
         Point finalXY;
 
         bool playing;
+        bool isCreated;
+
+        List<Cell> noRepeat;
 
         public FormMain()
         {
@@ -57,6 +57,7 @@ namespace IA_Backtracking_Using_Visual_Elements
             initXY = new Point(0, 0);
 
             playing = false;
+            isCreated = false;
         }
 
         private void buttonExamine_Click(object sender, EventArgs e)
@@ -89,11 +90,6 @@ namespace IA_Backtracking_Using_Visual_Elements
                 }
                 finalXY.X = -1;
                 finalXY.Y = -1;
-                buttonCharacter.Enabled = true;
-                buttonFinalCoord.Enabled = true;
-                buttonCreature1.Enabled = true;
-                buttonCreature2.Enabled = true;
-                buttonCreature3.Enabled = true;
             }
             panelMap.Refresh();
         }
@@ -141,6 +137,10 @@ namespace IA_Backtracking_Using_Visual_Elements
                 FormTerrains GroundWindow = new FormTerrains(ref mapa);
                 GroundWindow.ShowDialog();
                 panelMap.Refresh();
+
+                noRepeat = GroundWindow.GetNoRepeat;
+
+                buttonCharacter.Enabled = true;
             }
         }
 
@@ -208,26 +208,30 @@ namespace IA_Backtracking_Using_Visual_Elements
             if (!playing && character!=null && finalXY.X>-1)
             {
                 buttonExamine.Enabled = false;
+                buttonInitialCord.Enabled = false;
                 buttonPlay.Text = "STOP";
                 GroundButton.Enabled = false;
                 buttonCharacter.Enabled = false;
                 buttonFinalCoord.Enabled = false;
-                buttonCreature1.Enabled = false;
-                buttonCreature2.Enabled = false;
-                buttonCreature3.Enabled = false;
                 playing = !playing;
             }
             else if(playing && character != null)
             {
                 buttonExamine.Enabled = true;
+                buttonInitialCord.Enabled = true;
                 buttonPlay.Text = "Play";
                 GroundButton.Enabled = true;
                 buttonCharacter.Enabled = true;
                 buttonFinalCoord.Enabled = true;
-                buttonCreature1.Enabled = true;
-                buttonCreature2.Enabled = true;
-                buttonCreature3.Enabled = true;
                 playing = !playing;
+            }
+            if(character == null)
+            {
+                MessageBox.Show("Debe haber un personaje para jugar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if(finalXY.X == -1)
+            {
+                MessageBox.Show("Debe haber un estado final", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -242,7 +246,6 @@ namespace IA_Backtracking_Using_Visual_Elements
                     case Keys.Right:
                         e.IsInputKey = true;
                         break;
-
                 }
             }
         }
@@ -280,8 +283,30 @@ namespace IA_Backtracking_Using_Visual_Elements
             {
                 initXY.X = currentXY.X;
                 initXY.Y = currentXY.Y;
-                character = new Character("Tu gfa", Properties.Resources.man, currentXY.X, currentXY.Y);
+                //character = new Character(Properties.Resources.man, currentXY.X, currentXY.Y);
+                
                 panelMap.Refresh();
+
+                FormNewCharacter NewCharacterWindow = new FormNewCharacter(ref noRepeat);
+                NewCharacterWindow.ShowDialog();
+
+                isCreated = NewCharacterWindow.GetisCreated;
+                if(isCreated)
+                {
+                    character = NewCharacterWindow.GetCharacter;
+
+                    buttonCharacter.Enabled = true;
+                    buttonFinalCoord.Enabled = true;
+                    buttonInitialCord.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Personaje no creado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe elegir los tipos de terreno", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -291,6 +316,20 @@ namespace IA_Backtracking_Using_Visual_Elements
             {
                 finalXY.X = currentXY.X;
                 finalXY.Y = currentXY.Y;
+            }
+        }
+
+        private void buttonInitialCord_Click(object sender, EventArgs e)
+        {
+            if (mapa[0][0].texture != null)
+            {
+                initXY.X = currentXY.X;
+                initXY.Y = currentXY.Y;
+
+                character.coordinateX = currentXY.X;
+                character.coordinateY = currentXY.Y;
+
+                panelMap.Refresh();
             }
         }
     }

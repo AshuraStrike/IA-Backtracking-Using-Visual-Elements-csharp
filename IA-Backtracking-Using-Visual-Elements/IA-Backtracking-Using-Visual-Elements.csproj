@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Character.cs" />
+    <Compile Include="Class\IdCost.cs" />
     <Compile Include="Class\Map.cs" />
     <Compile Include="Class\Cell.cs" />
     <Compile Include="Class\Reader.cs" />
@@ -70,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewCharacter.resx">
+      <DependentUpon>FormNewCharacter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTerrains.resx">
       <DependentUpon>FormTerrains.cs</DependentUpon>
@@ -138,6 +142,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Textures\man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\badger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\fish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\wolf.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

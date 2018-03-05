@@ -175,5 +175,12 @@ namespace IA_Backtracking_Using_Visual_Elements
                     break;
             }
         }
+
+        public List<Cell> GetNoRepeat { get { return noRepeatNumber; } }
+
+        private void pictureBoxTerrain_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

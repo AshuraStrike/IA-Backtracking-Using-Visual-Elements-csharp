@@ -63,6 +63,16 @@ namespace IA_Backtracking_Using_Visual_Elements.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap badger {
+            get {
+                object obj = ResourceManager.GetObject("badger", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bedrock {
             get {
                 object obj = ResourceManager.GetObject("bedrock", resourceCulture);
@@ -116,6 +126,16 @@ namespace IA_Backtracking_Using_Visual_Elements.Properties {
         internal static System.Drawing.Bitmap farmland_dry {
             get {
                 object obj = ResourceManager.GetObject("farmland_dry", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fish {
+            get {
+                object obj = ResourceManager.GetObject("fish", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +216,16 @@ namespace IA_Backtracking_Using_Visual_Elements.Properties {
         internal static System.Drawing.Bitmap water {
             get {
                 object obj = ResourceManager.GetObject("water", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wolf {
+            get {
+                object obj = ResourceManager.GetObject("wolf", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

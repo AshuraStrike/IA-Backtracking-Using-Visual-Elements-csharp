@@ -110,6 +110,7 @@
             this.pictureBoxTerrain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxTerrain.TabIndex = 14;
             this.pictureBoxTerrain.TabStop = false;
+            this.pictureBoxTerrain.Click += new System.EventHandler(this.pictureBoxTerrain_Click);
             // 
             // FormTerrains
             // 
