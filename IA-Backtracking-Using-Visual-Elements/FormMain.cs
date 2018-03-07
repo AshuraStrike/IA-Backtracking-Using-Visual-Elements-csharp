@@ -36,6 +36,9 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         List<Cell> noRepeat;
 
+        Brush alphaGreenBrush;
+        Brush alphaOrangeBrush;
+
         public FormMain()
         {
             InitializeComponent();
@@ -53,11 +56,15 @@ namespace IA_Backtracking_Using_Visual_Elements
 
             font = new Font("Arial", 8.0f, FontStyle.Regular);
 
-            currentXY = new Point(0,0);
-            initXY = new Point(0, 0);
+            currentXY = new Point(-1,-1);
+            initXY = new Point(-1, -1);
 
             playing = false;
             isCreated = false;
+
+            alphaOrangeBrush = new SolidBrush(Color.FromArgb(80, Color.Orange));
+
+            alphaGreenBrush = new SolidBrush(Color.FromArgb(80, Color.Green));
         }
 
         private void buttonExamine_Click(object sender, EventArgs e)
@@ -197,11 +204,16 @@ namespace IA_Backtracking_Using_Visual_Elements
                     for (int j = 0; j < mapa[0].Count; j++)
                     {
                         graphics.DrawImage(mapa[i][j].texture, j * CELL_WIDTH, i * CELL_WIDTH);
+
+                        if(initXY.X == j && initXY.Y == i) graphics.FillRectangle(alphaGreenBrush, initXY.X * CELL_WIDTH, initXY.Y * CELL_WIDTH, CELL_WIDTH, CELL_WIDTH);
+                        if (finalXY.X == j && finalXY.Y == i) graphics.FillRectangle(alphaOrangeBrush, finalXY.X * CELL_WIDTH, finalXY.Y * CELL_WIDTH, CELL_WIDTH, CELL_WIDTH);
+
                         graphics.DrawString(mapa[i][j].listStepsString(), font,brushRed, j * CELL_WIDTH, i*CELL_WIDTH);
                     }
                 }
             }
-            if(character != null)
+
+            if (character != null)
             graphics.DrawImage(character.characterImg, character.coordinateX * CELL_WIDTH, character.coordinateY * CELL_WIDTH);
         }
 
@@ -345,12 +357,6 @@ namespace IA_Backtracking_Using_Visual_Elements
         {
             if (mapa[0][0].texture != null)
             {
-                initXY.X = currentXY.X;
-                initXY.Y = currentXY.Y;
-                //character = new Character(Properties.Resources.man, currentXY.X, currentXY.Y);
-                
-                panelMap.Refresh();
-
                 FormNewCharacter NewCharacterWindow = new FormNewCharacter(ref noRepeat);
                 NewCharacterWindow.ShowDialog();
 
@@ -362,6 +368,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                     buttonCharacter.Enabled = true;
                     buttonFinalCoord.Enabled = true;
                     buttonInitialCord.Enabled = true;
+                    panelMap.Refresh();
                 }
                 else
                 {
@@ -397,6 +404,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                 }
                 else
                 {
+                    panelMap.Refresh();
                     MessageBox.Show("Posicion final: " + labelSelectedX.Text + "," + labelSelectedY.Text, "Posicion final seleccionada!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
