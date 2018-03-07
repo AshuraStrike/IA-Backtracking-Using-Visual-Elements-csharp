@@ -141,7 +141,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                 
                     // Bosque
                 case 3:
-                    pictureBoxTerrain.Image = Properties.Resources.forest3;
+                    pictureBoxTerrain.Image = Properties.Resources.forest2;
                     break;
 
                     //Montaña

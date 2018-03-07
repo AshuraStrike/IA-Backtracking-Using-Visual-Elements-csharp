@@ -65,6 +65,8 @@ namespace IA_Backtracking_Using_Visual_Elements
             alphaOrangeBrush = new SolidBrush(Color.FromArgb(80, Color.Orange));
 
             alphaGreenBrush = new SolidBrush(Color.FromArgb(80, Color.Green));
+
+            formGraphics = this.CreateGraphics();
         }
 
         private void buttonExamine_Click(object sender, EventArgs e)
@@ -94,6 +96,9 @@ namespace IA_Backtracking_Using_Visual_Elements
                     System.Diagnostics.Debug.WriteLine("Algo ha fallado...");
                     labelRoute.ForeColor = Color.Red;
                     labelRoute.Text = "Archivo Inválido!";
+                    panelMap.Width = 0;
+                    panelMap.Height = 0;
+                    formGraphics.Clear(SystemColors.Control);
                 }
                 finalXY.X = -1;
                 finalXY.Y = -1;
@@ -197,7 +202,7 @@ namespace IA_Backtracking_Using_Visual_Elements
         private void panelMap_Paint(object sender, PaintEventArgs e)
         {
             graphics = panelMap.CreateGraphics();
-            if (mapa[0][0].texture!=null)
+            if (mapa.Count > 0 && mapa[0][0].texture != null)
             {
                 for (int i = 0; i < mapa.Count; i++)
                 {
