@@ -25,7 +25,8 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         public Character()
         {
-
+            coordinateX = -1;
+            coordinateY = -1;
         }
     }
 }

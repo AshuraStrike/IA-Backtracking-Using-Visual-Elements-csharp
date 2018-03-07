@@ -67,7 +67,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                 }
                 else
                 {
-                    idCost = new IdCost(Int32.Parse(noRepeat[ListBoxTerrain.SelectedIndex].TerrainId.ToString()), Int32.Parse(textBoxCost.Text));
+                    idCost = new IdCost(Int32.Parse(noRepeat[ListBoxTerrain.SelectedIndex].TerrainId.ToString()), float.Parse(textBoxCost.Text));
                     textBoxCost.Text = "";
                 }
 

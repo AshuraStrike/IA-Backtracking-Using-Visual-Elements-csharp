@@ -9,9 +9,9 @@ namespace IA_Backtracking_Using_Visual_Elements
     public class IdCost
     {
         public int id;
-        public int cost;
+        public float cost;
 
-        public IdCost(int id, int cost)
+        public IdCost(int id, float cost)
         {
             this.id = id;
             this.cost = cost;

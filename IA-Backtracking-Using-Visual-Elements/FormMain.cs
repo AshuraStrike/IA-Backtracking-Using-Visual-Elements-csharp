@@ -221,6 +221,8 @@ namespace IA_Backtracking_Using_Visual_Elements
                 playing = !playing;
 
                 character.currentStep = 1;
+                character.coordinateX = initXY.X;
+                character.coordinateY = initXY.Y;
                 mapa[character.coordinateY][character.coordinateX].listSteps.Add(character.currentStep);
             }
             else if(playing && character != null)
@@ -329,8 +331,8 @@ namespace IA_Backtracking_Using_Visual_Elements
                 if (moved) {
                     character.currentStep++;
                     mapa[character.coordinateY][character.coordinateX].listSteps.Add(character.currentStep);
+                    panelMap.Refresh();
                 }
-                panelMap.Refresh();
                 if(character.coordinateX == finalXY.X && character.coordinateY == finalXY.Y)
                 {
                     MessageBox.Show("Llegaste al punto final","Finished!",MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -374,26 +376,62 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         private void buttonFinalCoord_Click(object sender, EventArgs e)
         {
+            bool selectable = false;
+
             if (mapa[0][0].texture != null)
             {
-                finalXY.X = currentXY.X;
-                finalXY.Y = currentXY.Y;
+                for (int i = 0; i < character.idCostList.Count; i++)
+                {
+                    if (mapa[currentXY.Y][currentXY.X].TerrainId == character.idCostList[i].id && character.idCostList[i].cost > -1)
+                    {
+                        finalXY.X = currentXY.X;
+                        finalXY.Y = currentXY.Y;
 
-                MessageBox.Show("Posicion final: " +labelSelectedX.Text+","+labelSelectedY.Text,"Posicion final seleccionada!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        selectable = true;
+                        break;
+                    }
+                }
+                if (!selectable)
+                {
+                    MessageBox.Show("Coordenada invalida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Posicion final: " + labelSelectedX.Text + "," + labelSelectedY.Text, "Posicion final seleccionada!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
         private void buttonInitialCord_Click(object sender, EventArgs e)
         {
+            bool selectable = false;
+
             if (mapa[0][0].texture != null)
             {
-                initXY.X = currentXY.X;
-                initXY.Y = currentXY.Y;
+                for (int i = 0; i < character.idCostList.Count; i++)
+                {
+                    if (mapa[currentXY.Y][currentXY.X].TerrainId == character.idCostList[i].id && character.idCostList[i].cost > -1)
+                    {
+                        initXY.X = currentXY.X;
+                        initXY.Y = currentXY.Y;
 
-                character.coordinateX = currentXY.X;
-                character.coordinateY = currentXY.Y;
-                panelMap.Refresh();
-                MessageBox.Show("Posicion inicial: " + labelSelectedX.Text + "," + labelSelectedY.Text, "Posicion inicial seleccionada!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        character.coordinateX = currentXY.X;
+                        character.coordinateY = currentXY.Y;
+                        selectable = true;
+                        break;
+                    }
+                }
+
+                if (!selectable)
+                {
+                    MessageBox.Show("Coordenada invalida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    panelMap.Refresh();
+                    MessageBox.Show("Posicion inicial: " + labelSelectedX.Text + "," + labelSelectedY.Text, "Posicion inicial seleccionada!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
             }
         }
 
@@ -401,7 +439,7 @@ namespace IA_Backtracking_Using_Visual_Elements
         {
             for(int i = 0; i < mapa.Count; i++)
             {
-                for (int j = 0; j< mapa.Count; j++)
+                for (int j = 0; j< mapa[0].Count; j++)
                 {
                     mapa[i][j].listSteps = new List<int>();
                 }
