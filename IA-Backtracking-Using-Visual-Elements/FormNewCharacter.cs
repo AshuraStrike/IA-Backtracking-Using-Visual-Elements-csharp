@@ -38,9 +38,18 @@ namespace IA_Backtracking_Using_Visual_Elements
         //solo recibir numeros en el textbox
         private void textBoxCost_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != (char)Keys.Back))
             {
                 e.Handled = true;
+            }
+            else if(e.KeyChar != (char)Keys.Back)
+            {
+                string checkInput = textBoxCost.Text;
+                checkInput += (char)e.KeyChar;
+                if (!System.Text.RegularExpressions.Regex.IsMatch(checkInput, "^[0-9]*\\.?[0-9]{0,2}$"))
+                {
+                    e.Handled = true;
+                }
             }
         }
 
