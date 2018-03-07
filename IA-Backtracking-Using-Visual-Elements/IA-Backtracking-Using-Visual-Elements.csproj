@@ -152,5 +152,23 @@
   <ItemGroup>
     <None Include="Textures\wolf.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\forest1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\meadow.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\swamp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\forest2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\forest3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Textures\jungle.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

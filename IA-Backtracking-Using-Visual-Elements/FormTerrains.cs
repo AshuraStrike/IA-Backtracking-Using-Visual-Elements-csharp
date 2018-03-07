@@ -136,12 +136,12 @@ namespace IA_Backtracking_Using_Visual_Elements
                 
                     // Pradera
                 case 2:
-                    pictureBoxTerrain.Image = Properties.Resources.grass_path_top;
+                    pictureBoxTerrain.Image = Properties.Resources.meadow;
                     break;
                 
                     // Bosque
                 case 3:
-                    pictureBoxTerrain.Image = Properties.Resources.forest;
+                    pictureBoxTerrain.Image = Properties.Resources.forest3;
                     break;
 
                     //Montaña
@@ -149,33 +149,23 @@ namespace IA_Backtracking_Using_Visual_Elements
                     pictureBoxTerrain.Image = Properties.Resources.cobblestone;
                     break;
 
-                    //Arena
+                    //Desierto
                 case 5:
                     pictureBoxTerrain.Image = Properties.Resources.sand;
                     break;
 
-                    //Desierto
-                case 6:
-                    pictureBoxTerrain.Image = Properties.Resources.sand;
-                    break;
-
                     //Pantano
-                case 7:
-                    pictureBoxTerrain.Image = Properties.Resources.farmland_dry;
-                    break;
-
-                    //Rio
-                case 8:
-                    pictureBoxTerrain.Image = Properties.Resources.water;
+                case 6:
+                    pictureBoxTerrain.Image = Properties.Resources.swamp;
                     break;
 
                     //Jungla
-                case 9:
-                    pictureBoxTerrain.Image = Properties.Resources.door_spruce_lower;
+                case 7:
+                    pictureBoxTerrain.Image = Properties.Resources.jungle;
                     break;
 
                     // Lava
-                case 10:
+                case 8:
                     pictureBoxTerrain.Image = Properties.Resources.magma;
                     break;
             }

@@ -91,6 +91,7 @@ namespace IA_Backtracking_Using_Visual_Elements
             {
                 MessageBox.Show("Debes ingresar un valor para continuar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            CheckBoxNA.Checked = false;
         }
 
         private void ComboBoxImage_SelectedIndexChanged(object sender, EventArgs e)

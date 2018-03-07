@@ -153,9 +153,49 @@ namespace IA_Backtracking_Using_Visual_Elements.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap forest1 {
+            get {
+                object obj = ResourceManager.GetObject("forest1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap forest2 {
+            get {
+                object obj = ResourceManager.GetObject("forest2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap forest3 {
+            get {
+                object obj = ResourceManager.GetObject("forest3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap grass_path_top {
             get {
                 object obj = ResourceManager.GetObject("grass_path_top", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jungle {
+            get {
+                object obj = ResourceManager.GetObject("jungle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +216,16 @@ namespace IA_Backtracking_Using_Visual_Elements.Properties {
         internal static System.Drawing.Bitmap man {
             get {
                 object obj = ResourceManager.GetObject("man", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap meadow {
+            get {
+                object obj = ResourceManager.GetObject("meadow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,6 +256,16 @@ namespace IA_Backtracking_Using_Visual_Elements.Properties {
         internal static System.Drawing.Bitmap stone_granite {
             get {
                 object obj = ResourceManager.GetObject("stone_granite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap swamp {
+            get {
+                object obj = ResourceManager.GetObject("swamp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -124,8 +124,14 @@
   <data name="farmland_dry" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Textures\farmland_dry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dirt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Textures\dirt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bedrock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Textures\bedrock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="badger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Textures\badger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="water" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Textures\water.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,17 +139,23 @@
   <data name="grass_path_top" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Textures\grass_path_top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wolf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\wolf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="forest3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Textures\forest3.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fish" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Textures\fish.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="swamp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Textures\swamp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="door_spruce_lower" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Textures\door_spruce_lower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stone_granite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Textures\stone_granite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="man" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Textures\man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="brick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Textures\brick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,16 +169,22 @@
   <data name="magma" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Textures\magma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="man" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="forest1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Textures\forest1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wolf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Textures\wolf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="meadow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Textures\meadow.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="forest2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Textures\forest2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Textures\forest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dirt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\dirt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="badger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Textures\badger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="jungle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Textures\jungle.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
