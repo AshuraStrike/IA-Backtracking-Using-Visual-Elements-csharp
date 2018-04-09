@@ -208,12 +208,19 @@ namespace IA_Backtracking_Using_Visual_Elements
                 {
                     for (int j = 0; j < mapa[0].Count; j++)
                     {
-                        graphics.DrawImage(mapa[i][j].texture, j * CELL_WIDTH, i * CELL_WIDTH);
+                        if (mapa[i][j].veiled == false || playing==false)
+                        {
+                            graphics.DrawImage(mapa[i][j].texture, j * CELL_WIDTH, i * CELL_WIDTH);
 
-                        if(initXY.X == j && initXY.Y == i) graphics.FillRectangle(alphaGreenBrush, initXY.X * CELL_WIDTH, initXY.Y * CELL_WIDTH, CELL_WIDTH, CELL_WIDTH);
-                        if (finalXY.X == j && finalXY.Y == i) graphics.FillRectangle(alphaOrangeBrush, finalXY.X * CELL_WIDTH, finalXY.Y * CELL_WIDTH, CELL_WIDTH, CELL_WIDTH);
+                            if (initXY.X == j && initXY.Y == i) graphics.FillRectangle(alphaGreenBrush, initXY.X * CELL_WIDTH, initXY.Y * CELL_WIDTH, CELL_WIDTH, CELL_WIDTH);
+                            if (finalXY.X == j && finalXY.Y == i) graphics.FillRectangle(alphaOrangeBrush, finalXY.X * CELL_WIDTH, finalXY.Y * CELL_WIDTH, CELL_WIDTH, CELL_WIDTH);
 
-                        graphics.DrawString(mapa[i][j].listStepsString(), font,brushRed, j * CELL_WIDTH, i*CELL_WIDTH);
+                            graphics.DrawString(mapa[i][j].listStepsString(), font, brushRed, j * CELL_WIDTH, i * CELL_WIDTH);
+                        }
+                        else
+                        {
+
+                        }
                     }
                 }
             }
@@ -241,6 +248,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                 character.coordinateX = initXY.X;
                 character.coordinateY = initXY.Y;
                 mapa[character.coordinateY][character.coordinateX].listSteps.Add(character.currentStep);
+                unveilKnown();
             }
             else if(playing && character != null)
             {   //Dejar de jugar
@@ -348,6 +356,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                 if (moved) {
                     character.currentStep++;
                     mapa[character.coordinateY][character.coordinateX].listSteps.Add(character.currentStep);
+                    unveilKnown();
                     panelMap.Refresh();
                 }
                 if(character.coordinateX == finalXY.X && character.coordinateY == finalXY.Y)
@@ -455,8 +464,31 @@ namespace IA_Backtracking_Using_Visual_Elements
                 for (int j = 0; j< mapa[0].Count; j++)
                 {
                     mapa[i][j].listSteps = new List<int>();
+                    mapa[i][j].veiled = true;
                 }
             }
         }
+
+        public void unveilKnown()
+        {
+            if (character.coordinateY + 1 < mapa.Count)
+            {
+                mapa[character.coordinateY + 1][character.coordinateX].veiled = false;
+            }
+            if (character.coordinateY - 1 > -1)
+            {
+                mapa[character.coordinateY - 1][character.coordinateX].veiled = false;
+            }
+            if (character.coordinateX + 1 < mapa[0].Count)
+            {
+                mapa[character.coordinateY][character.coordinateX + 1].veiled = false;
+            }
+            if (character.coordinateX - 1 > -1)
+            {
+                mapa[character.coordinateY][character.coordinateX - 1].veiled = false;
+            }
+            mapa[character.coordinateY][character.coordinateX].veiled = false;
+        }
+
     }
 }

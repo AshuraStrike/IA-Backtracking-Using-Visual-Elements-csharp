@@ -9,6 +9,7 @@ namespace IA_Backtracking_Using_Visual_Elements
 {
     public class Cell
     {
+        public bool veiled;
         public int TerrainId;
         public string TerrainName;
         public Image texture;
@@ -17,6 +18,7 @@ namespace IA_Backtracking_Using_Visual_Elements
         public Cell(int TerrainId)
         {
             this.TerrainId = TerrainId;
+            this.veiled = true;
         }
 
         public Cell(int TerrainId, string TerrainName, Image img)
@@ -25,6 +27,7 @@ namespace IA_Backtracking_Using_Visual_Elements
             this.TerrainName = TerrainName;
             texture = img;
             listSteps = new List<int>();
+            this.veiled = true;
         }
 
         public string listStepsString()
