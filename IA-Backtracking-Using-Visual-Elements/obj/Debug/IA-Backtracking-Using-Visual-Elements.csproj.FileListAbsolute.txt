@@ -55,3 +55,4 @@ C:\Users\David\Google Drive\CUCEI\Semestre 7\Inteligencia Artificial\Proyecto Fi
 C:\Users\David\Desktop\IA-Backtracking-Using-Visual-Elements-csharp\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormNewCharacter.resources
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormNewCharacter.resources
 C:\Users\David\Desktop\IA-Backtracking-Using-Visual-Elements-csharp\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormTreeView.resources
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormTreeView.resources

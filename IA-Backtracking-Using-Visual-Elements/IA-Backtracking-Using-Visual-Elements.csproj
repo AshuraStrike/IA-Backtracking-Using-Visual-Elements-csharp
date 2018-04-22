@@ -48,6 +48,7 @@
     <Compile Include="Class\IdCost.cs" />
     <Compile Include="Class\Map.cs" />
     <Compile Include="Class\Cell.cs" />
+    <Compile Include="Class\Move.cs" />
     <Compile Include="Class\Reader.cs" />
     <Compile Include="Class\Tree.cs" />
     <Compile Include="FormMain.cs">

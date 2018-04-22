@@ -305,6 +305,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                                     if (character.coordinateX > 0) character.coordinateX -= 1;
                                     moved = true;
                                 }
+                                break;
                             }
                         }
                         break;
@@ -320,6 +321,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                                     if (character.coordinateX < mapa[0].Count - 1) character.coordinateX += 1;
                                     moved = true;
                                 }
+                                break;
                             }
                         }
                         break;
@@ -335,6 +337,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                                     if (character.coordinateY > 0) character.coordinateY -= 1;
                                     moved = true;
                                 }
+                                break;
                             }
                         }
                         break;
@@ -350,6 +353,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                                     if (character.coordinateY < mapa.Count - 1) character.coordinateY += 1;
                                     moved = true;
                                 }
+                                break;
                             }
                         }
                         break;
@@ -472,23 +476,35 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         public void unveilKnown()
         {
+            int child = 0;
+            //Down
             if (character.coordinateY + 1 < mapa.Count)
             {
                 mapa[character.coordinateY + 1][character.coordinateX].veiled = false;
+                //valida si se puede caminar
+                child += checkChild(0, 1);
             }
+            //Up
             if (character.coordinateY - 1 > -1)
             {
                 mapa[character.coordinateY - 1][character.coordinateX].veiled = false;
+                child += checkChild(0, -1);
             }
+            //Right
             if (character.coordinateX + 1 < mapa[0].Count)
             {
                 mapa[character.coordinateY][character.coordinateX + 1].veiled = false;
+                child += checkChild(1, 0);
             }
+            //Left
             if (character.coordinateX - 1 > -1)
             {
                 mapa[character.coordinateY][character.coordinateX - 1].veiled = false;
+                child += checkChild(-1, 0);
             }
+            //Center
             mapa[character.coordinateY][character.coordinateX].veiled = false;
+            System.Diagnostics.Debug.WriteLine(child);
         }
 
         private void ButtonTree_Click(object sender, EventArgs e)
@@ -496,5 +512,24 @@ namespace IA_Backtracking_Using_Visual_Elements
             FormTreeView TreeWIndow = new FormTreeView();
             TreeWIndow.ShowDialog();
         }
+
+        public int checkChild(int x,int y)
+        {
+            int child = 0;
+            for (int i = 0; i < character.idCostList.Count; i++)
+            {
+                //Si encuentra el id
+                if (character.idCostList[i].id == mapa[character.coordinateY + y][character.coordinateX + x].TerrainId)
+                {
+                    if (character.idCostList[i].cost > -1)
+                    {
+                        child = 1;
+                    }
+                    break;
+                }
+            }
+            return child;
+        }
+
     }
 }
