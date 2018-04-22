@@ -24,7 +24,6 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
         Node leaf4;
 
 
-
         public Node(int fatherPositionX, int fatherPositionY, int positionX, int positionY, int numberOfChilds,
                     int visitOrder, bool isOpen, string other)
         {
@@ -71,7 +70,6 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
     class Tree
     {
         Node root;
-        Node lastAdded;
 
         public Tree()
         {
@@ -82,7 +80,6 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
         {
             this.root = root;
             root.Other = "Punto inicial";
-            lastAdded = root;
         }
 
         public void add(Node newNode)
@@ -95,69 +92,27 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
                 root.Leaf2 = null;
                 root.Leaf3 = null;
                 root.Leaf4 = null;
-                lastAdded = root;
             }
             else
             {
-                if(lastAdded.Leaf1 == null)
+                if(root.Leaf1 == null)
                 {
-                    lastAdded.Leaf1 = newNode;
-                    return;
+                    root.Leaf1 = newNode;
                 }
-                else if(lastAdded.Leaf2 == null)
+                else if(root.Leaf2 == null)
                 {
-                    lastAdded.Leaf2 = newNode;
-                    return;
+                    root.Leaf2 = newNode;
                 }
-                else if(lastAdded.Leaf3 == null)
+                else if (root.Leaf3 == null)
                 {
-                    lastAdded.Leaf3 = newNode;
-                    return;
+                    root.Leaf3 = newNode;
                 }
-                else if(lastAdded.Leaf4 == null)
+                else if (root.Leaf4 == null)
                 {
-                    lastAdded.Leaf4 = newNode;
-                    return;
+                    root.Leaf4 = newNode;
                 }
-            }
 
-            /* Using the las added node to keep adding 
-            bool added = false;
-
-            do
-            {
-                // Traverse tree
-                if(newNode.VisitOrder < lastAdded.VisitOrder)
-                {
-                    // Go left
-                    if(lastAdded.Left == null)
-                    {
-                        // Add item
-                        lastAdded.Left = newNode;
-                        added = true;
-                    }
-                    else
-                    {
-                        lastAdded = lastAdded.Left;
-                    }
-                }
-                // Traverse tree
-                if(newNode.VisitOrder >= lastAdded.VisitOrder)
-                {
-                    if(lastAdded.Right == null)
-                    {
-                        lastAdded.Right = newNode;
-                        added = true;
-                    }
-                    else
-                    {
-                        // Go right
-                        lastAdded = lastAdded.Right;
-                    }
-                }
             }
-            while (!added);
-            */
         }
 
         public void printTree()
