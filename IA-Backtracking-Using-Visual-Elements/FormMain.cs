@@ -263,7 +263,8 @@ namespace IA_Backtracking_Using_Visual_Elements
             if(character == null)
             {
                 MessageBox.Show("Debe haber un personaje para jugar", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }else if(finalXY.X == -1)
+            }
+            else if(finalXY.X == -1)
             {
                 MessageBox.Show("Debe haber un estado final", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -490,5 +491,10 @@ namespace IA_Backtracking_Using_Visual_Elements
             mapa[character.coordinateY][character.coordinateX].veiled = false;
         }
 
+        private void ButtonTree_Click(object sender, EventArgs e)
+        {
+            FormTreeView TreeWIndow = new FormTreeView();
+            TreeWIndow.ShowDialog();
+        }
     }
 }

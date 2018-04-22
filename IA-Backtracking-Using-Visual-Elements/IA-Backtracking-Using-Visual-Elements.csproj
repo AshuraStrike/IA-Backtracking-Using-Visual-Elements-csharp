@@ -49,6 +49,7 @@
     <Compile Include="Class\Map.cs" />
     <Compile Include="Class\Cell.cs" />
     <Compile Include="Class\Reader.cs" />
+    <Compile Include="Class\Tree.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +68,12 @@
     <Compile Include="FormTerrains.Designer.cs">
       <DependentUpon>FormTerrains.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTreeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTreeView.Designer.cs">
+      <DependentUpon>FormTreeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">
@@ -77,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTerrains.resx">
       <DependentUpon>FormTerrains.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTreeView.resx">
+      <DependentUpon>FormTreeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

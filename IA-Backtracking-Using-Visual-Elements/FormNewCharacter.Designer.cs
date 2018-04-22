@@ -32,7 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxCost = new System.Windows.Forms.TextBox();
             this.ButtonNext = new System.Windows.Forms.Button();
-            this.ButtonPrev = new System.Windows.Forms.Button();
             this.ComboBoxImage = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CheckBoxNA = new System.Windows.Forms.CheckBox();
@@ -75,15 +74,6 @@
             this.ButtonNext.Text = "Siguiente";
             this.ButtonNext.UseVisualStyleBackColor = true;
             this.ButtonNext.Click += new System.EventHandler(this.ButtonNext_Click);
-            // 
-            // ButtonPrev
-            // 
-            this.ButtonPrev.Location = new System.Drawing.Point(209, 318);
-            this.ButtonPrev.Name = "ButtonPrev";
-            this.ButtonPrev.Size = new System.Drawing.Size(95, 52);
-            this.ButtonPrev.TabIndex = 21;
-            this.ButtonPrev.Text = "Anterior";
-            this.ButtonPrev.UseVisualStyleBackColor = true;
             // 
             // ComboBoxImage
             // 
@@ -138,7 +128,6 @@
             this.Controls.Add(this.CheckBoxNA);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ComboBoxImage);
-            this.Controls.Add(this.ButtonPrev);
             this.Controls.Add(this.ButtonNext);
             this.Controls.Add(this.textBoxCost);
             this.Controls.Add(this.label2);
@@ -160,7 +149,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxCost;
         private System.Windows.Forms.Button ButtonNext;
-        private System.Windows.Forms.Button ButtonPrev;
         private System.Windows.Forms.ComboBox ComboBoxImage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox CheckBoxNA;
