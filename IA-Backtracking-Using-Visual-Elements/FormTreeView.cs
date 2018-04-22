@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IA_Backtracking_Using_Visual_Elements.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,18 +13,19 @@ namespace IA_Backtracking_Using_Visual_Elements
 {
     public partial class FormTreeView : Form
     {
-        public FormTreeView()
+        Tree tree;
+        public FormTreeView(ref List<Move> moveList)
         {
             InitializeComponent();
+            tree = new Tree(moveList);
+            tree.generateTree();
         }
 
-        private void ButtonAdd_Click(object sender, EventArgs e)
+        private void FormTreeView_Load(object sender, EventArgs e)
         {
-            TreeView.Nodes.Add("Hola");
-
-            TreeView.Nodes[0].Nodes.Add("Hola 1");
-            TreeView.Nodes[0].Nodes.Add("Hola 2");
-            TreeView.Nodes[0].Nodes.Add("Hola 3");
+            char a = 'A';
+            a += (char) tree.root.posX;
+            treeView.Nodes.Add(a + "," + tree.root.posY);
         }
     }
 }

@@ -35,8 +35,8 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
 
     public class Tree
     {
-        Node root;
-        List<Class.Move> moveList = new List<Move>();
+        public Node root;
+        public List<Class.Move> moveList = new List<Move>();
 
         public Tree(List<Class.Move> moveList)
         {
@@ -44,7 +44,7 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
         }
 
 
-        private void generateTree()
+        public void generateTree()
         {
             for(int i = 0; i < moveList.Count; i++)
             {
@@ -56,8 +56,19 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
                 else
                 {
                     Node father = search(moveList[i-1].coordX, moveList[i-1].coordY);
-                    Node newNode = new Node(father, moveList[i].coordX, moveList[i].coordY, moveList[i].childNumber, moveList[i].currentStep);
 
+                    Node newNode = search(moveList[i].coordX, moveList[i].coordY);
+
+                    if (newNode != null)
+                    {
+                        //existe
+                        newNode.visitList.Add(moveList[i].currentStep);
+                    }
+                    else
+                    {
+                        //no existe
+                        newNode = new Node(father, moveList[i].coordX, moveList[i].coordY, moveList[i].childNumber, moveList[i].currentStep);
+                    }
                     father.childList.Add(newNode);
                 }
             }
@@ -70,16 +81,16 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
 
         public Node searchInTree(Node currentNode, int x, int y)
         {
-            Node father;
+            Node father = null;
 
             if(currentNode.posX == x && currentNode.posY == y)
             {
                 return currentNode;
             }
             
-            foreach(Node node in currentNode.childList)
+            for(int i = 0; i < currentNode.childList.Count; i++)
             {
-                father = searchInTree(node, x, y);
+                father = searchInTree(currentNode.childList[i], x, y);
                 if(father != null)
                 {
                     return father;

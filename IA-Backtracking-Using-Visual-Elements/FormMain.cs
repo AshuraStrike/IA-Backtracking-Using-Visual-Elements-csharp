@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IA_Backtracking_Using_Visual_Elements.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +37,8 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         List<Cell> noRepeat;
 
+        List<Move> moveList;
+
         Brush alphaGreenBrush;
         Brush alphaOrangeBrush;
 
@@ -65,6 +68,8 @@ namespace IA_Backtracking_Using_Visual_Elements
             alphaOrangeBrush = new SolidBrush(Color.FromArgb(80, Color.Orange));
 
             alphaGreenBrush = new SolidBrush(Color.FromArgb(80, Color.Green));
+
+            moveList = new List<Move>();
 
             formGraphics = this.CreateGraphics();
         }
@@ -235,6 +240,7 @@ namespace IA_Backtracking_Using_Visual_Elements
         {
             if (!playing && character!=null && finalXY.X>-1)
             {   //Empezar
+                moveList.Clear();
                 resetMapNumbers();
                 buttonExamine.Enabled = false;
                 buttonInitialCord.Enabled = false;
@@ -504,12 +510,13 @@ namespace IA_Backtracking_Using_Visual_Elements
             }
             //Center
             mapa[character.coordinateY][character.coordinateX].veiled = false;
-            System.Diagnostics.Debug.WriteLine(child);
+
+            moveList.Add(new Move(character.coordinateX, character.coordinateY,child,character.currentStep));
         }
 
         private void ButtonTree_Click(object sender, EventArgs e)
         {
-            FormTreeView TreeWIndow = new FormTreeView();
+            FormTreeView TreeWIndow = new FormTreeView(ref moveList);
             TreeWIndow.ShowDialog();
         }
 
