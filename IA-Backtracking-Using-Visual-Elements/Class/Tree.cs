@@ -6,183 +6,87 @@ using System.Threading.Tasks;
 
 namespace IA_Backtracking_Using_Visual_Elements.Class
 {
-    class Node
+    public class Node
     {
-        int fatherPositionX;
-        int fatherPositionY;
-        int positionX;
-        int positionY;
-        int numberOfChilds;
-        int visitOrder;
-        bool isOpen;
-        string other;
-        bool isVisited;
+        public Node father;
+        public int posX;
+        public int posY;
+        public int numberOfChilds;
+        public bool isOpen;
 
-        Node leaf1;
-        Node leaf2;
-        Node leaf3;
-        Node leaf4;
+        public List<Node> childList;
+        public List<int> visitList;
 
-
-        public Node(int fatherPositionX, int fatherPositionY, int positionX, int positionY, int numberOfChilds,
-                    int visitOrder, bool isOpen, string other)
+        public Node(Node father, int posX, int posY, int numberOfChilds, int currentStep)
         {
-            this.fatherPositionX = fatherPositionX;
-            this.fatherPositionY = fatherPositionY;
-            this.positionX = positionX;
-            this.positionY = positionY;
+            visitList = new List<int>();
+            visitList.Add(currentStep);
+
+            childList = new List<Node>();
+
+            this.father = father;
+            this.posX = posX;
+            this.posY = posY;
             this.numberOfChilds = numberOfChilds;
-            this.visitOrder = visitOrder;
-            this.isOpen = isOpen;
-            this.IsVisited = false;
-            this.other = other;
 
-            leaf1 = null;
-            leaf2 = null;
-            leaf3 = null;
-            leaf4 = null;
+            isOpen = true;
         }
-
-        // Getters y Setters
-        public int FatherPositionX { get { return fatherPositionX; } set { fatherPositionX = value; } }
-        public int FatherPositionY { get { return fatherPositionY; } set { fatherPositionY = value; } }
-        public int PositionX { get { return positionX; } set { positionX = value; } }
-        public int PositionY { get { return positionY; } set { positionY = value; } }
-        public int NumberOfChilds { get { return numberOfChilds; } set { numberOfChilds = value; } }
-        public int VisitOrder { get { return visitOrder; } set { visitOrder = value; } }
-        public bool IsOpen { get { return isOpen; } set { isOpen = value; } }
-        public bool IsVisited { get { return isVisited; } set { isVisited = value; } }
-        public Node Leaf1 { get { return leaf1; } set { leaf1 = value; } }
-        public Node Leaf2 { get { return leaf2; } set { leaf2 = value; } }
-        public Node Leaf3 { get { return leaf3; } set { leaf3 = value; } }
-        public Node Leaf4 { get { return leaf4; } set { leaf4 = value; } }
-
-
-        public string Other { get { return other;  } set { other = value; } }
     }
 
-
-
-    /* CLASE ARBOL */
-
-
-
-    class Tree
+    public class Tree
     {
         Node root;
+        List<Class.Move> moveList = new List<Move>();
 
-        public Tree()
+        public Tree(List<Class.Move> moveList)
         {
-            root = null;
+            this.moveList = moveList;
         }
 
-        public Tree(Node root)
-        {
-            this.root = root;
-            root.Other = "Punto inicial";
-        }
 
-        public void add(Node newNode)
+        private void generateTree()
         {
-            // if the tree is empty add the new node to root
-            if (root == null)
+            for(int i = 0; i < moveList.Count; i++)
             {
-                root = newNode;
-                root.Leaf1 = null;
-                root.Leaf2 = null;
-                root.Leaf3 = null;
-                root.Leaf4 = null;
-            }
-            else
-            {
-                if(root.Leaf1 == null)
+                if (i == 0)
                 {
-                    root.Leaf1 = newNode;
+                    Node newNode = new Node(null, moveList[i].coordX, moveList[i].coordY, moveList[i].childNumber, moveList[i].currentStep);
+                    root = newNode;
                 }
-                else if(root.Leaf2 == null)
+                else
                 {
-                    root.Leaf2 = newNode;
-                }
-                else if (root.Leaf3 == null)
-                {
-                    root.Leaf3 = newNode;
-                }
-                else if (root.Leaf4 == null)
-                {
-                    root.Leaf4 = newNode;
-                }
+                    Node father = search(moveList[i-1].coordX, moveList[i-1].coordY);
+                    Node newNode = new Node(father, moveList[i].coordX, moveList[i].coordY, moveList[i].childNumber, moveList[i].currentStep);
 
+                    father.childList.Add(newNode);
+                }
             }
         }
 
-        public void printTree()
+        public Node search(int x, int y)
         {
-            if(root == null)
-            {
-                Console.WriteLine("El arbol esta vacio");
-                return;
-            }
-
-            if(root.Leaf1 != null)
-            {
-                Console.WriteLine("LEAF 1" + "\n" + "Padre: " + root.FatherPositionX + "," + root.FatherPositionY + "\n" + "Posicion: "
-                + root.PositionX + "," + root.PositionY + "\n" + "Numero de hijos: " + root.NumberOfChilds
-                + "\n" + "Orden de visita: " + root.VisitOrder + "\n" + "Abierto: " + root.IsOpen + "\n" + "Otro: " + root.Other);
-            }
-
-            if(root.Leaf2 != null)
-            {
-                Console.WriteLine("LEAF 2" + "\n" + "Padre: " + root.FatherPositionX + "," + root.FatherPositionY + "\n" + "Posicion: "
-                + root.PositionX + "," + root.PositionY + "\n" + "Numero de hijos: " + root.NumberOfChilds
-                + "\n" + "Orden de visita: " + root.VisitOrder + "\n" + "Abierto: " + root.IsOpen + "\n" + "Otro: " + root.Other);
-            }
-
-            if (root.Leaf3 != null)
-            {
-                Console.WriteLine("LEAF 3" + "\n" + "Padre: " + root.FatherPositionX + "," + root.FatherPositionY + "\n" + "Posicion: "
-                + root.PositionX + "," + root.PositionY + "\n" + "Numero de hijos: " + root.NumberOfChilds
-                + "\n" + "Orden de visita: " + root.VisitOrder + "\n" + "Abierto: " + root.IsOpen + "\n" + "Otro: " + root.Other);
-            }
-
-            if (root.Leaf4 != null)
-            {
-                Console.WriteLine("LEAF 4" + "\n" + "Padre: " + root.FatherPositionX + "," + root.FatherPositionY + "\n" + "Posicion: "
-                + root.PositionX + "," + root.PositionY + "\n" + "Numero de hijos: " + root.NumberOfChilds
-                + "\n" + "Orden de visita: " + root.VisitOrder + "\n" + "Abierto: " + root.IsOpen + "\n" + "Otro: " + root.Other);
-            }
-
+            return searchInTree(root, x, y);
         }
 
-        public bool visitedBranches(Node current, int typeOfBranch)
+        public Node searchInTree(Node currentNode, int x, int y)
         {
-            bool visited = false;
+            Node father;
 
-            switch(typeOfBranch)
+            if(currentNode.posX == x && currentNode.posY == y)
             {
-                case 1:
-                    visited = current.Leaf1.IsVisited;
-                    break;
-
-                case 2:
-                    visited = current.Leaf2.IsVisited;
-                    break;
-
-                case 3:
-                    visited = current.Leaf3.IsVisited;
-                    break;
-
-                case 4:
-                    visited = current.Leaf4.IsVisited;
-                    break;
-
-                case 5:
-                    visited = (current.Leaf1.IsVisited && current.Leaf2.IsVisited && current.Leaf3.IsVisited
-                        && current.Leaf4.IsVisited) ? true : false;
-                    break;
+                return currentNode;
+            }
+            
+            foreach(Node node in currentNode.childList)
+            {
+                father = searchInTree(node, x, y);
+                if(father != null)
+                {
+                    return father;
+                }
             }
 
-            return visited;
+            return null;
         }
-
     }
 }

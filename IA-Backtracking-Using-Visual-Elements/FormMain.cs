@@ -481,7 +481,7 @@ namespace IA_Backtracking_Using_Visual_Elements
             if (character.coordinateY + 1 < mapa.Count)
             {
                 mapa[character.coordinateY + 1][character.coordinateX].veiled = false;
-                //valida si se puede caminar
+                //validate if it can walk
                 child += checkChild(0, 1);
             }
             //Up
