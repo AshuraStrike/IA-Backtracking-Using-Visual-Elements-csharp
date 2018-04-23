@@ -33,19 +33,19 @@
             // 
             // treeView
             // 
-            this.treeView.Location = new System.Drawing.Point(10, 11);
-            this.treeView.Margin = new System.Windows.Forms.Padding(2);
+            this.treeView.Location = new System.Drawing.Point(13, 14);
+            this.treeView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeView.Name = "treeView";
-            this.treeView.Size = new System.Drawing.Size(370, 364);
+            this.treeView.Size = new System.Drawing.Size(638, 447);
             this.treeView.TabIndex = 0;
             // 
             // FormTreeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 384);
+            this.ClientSize = new System.Drawing.Size(663, 473);
             this.Controls.Add(this.treeView);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormTreeView";
             this.Text = "Arbol De Recubrimiento";
             this.Load += new System.EventHandler(this.FormTreeView_Load);

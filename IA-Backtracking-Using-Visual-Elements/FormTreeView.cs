@@ -30,7 +30,7 @@ namespace IA_Backtracking_Using_Visual_Elements
             a += (char) tree.root.posX;
             treeView.Nodes.Add(a + "," + tree.root.posY);
 
-            treeView.Nodes.Add(a + "," + tree.search(tree.root.posX, tree.root.posY));
+
         }
     }
 }

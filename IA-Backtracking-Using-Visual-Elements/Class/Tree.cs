@@ -125,12 +125,28 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
             return null;
         }
 
-        public void printTree(Node node)
+        public void print(int x, int y)
         {
-            Queue<Node> queue = new Queue<Node>();
-            queue.Enqueue(root);
+            printTree(root);
+        }
 
-            
+        private void printTree(Node node)
+        {
+            Node father = null;
+
+            if (node != null)
+            {
+                
+            }
+
+            for (int i = 0; i < node.childList.Count; i++)
+            {
+                //father = printTree(node.childList[i]);
+                if (father != null)
+                {
+                    
+                }
+            }
         }
     }
 }
