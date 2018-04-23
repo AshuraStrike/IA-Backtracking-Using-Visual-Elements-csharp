@@ -12,7 +12,7 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
         public int posX;
         public int posY;
         public int numberOfChilds;
-        public bool isOpen;
+        public bool visited;
 
         public List<Node> childList;
         public List<int> visitList;
@@ -28,8 +28,29 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
             this.posX = posX;
             this.posY = posY;
             this.numberOfChilds = numberOfChilds;
+        }
 
-            isOpen = true;
+        public bool isOpen()
+        {
+            bool founded = false;
+
+            if (childList.Count < numberOfChilds)
+            {
+                founded = true;
+            }
+            else
+            {
+                for (int i = 0; i < childList.Count; i++)
+                {
+                    if (childList[i].visited == false)
+                    {
+                        founded = true;
+                        break;
+                    }
+                }
+            }
+
+            return founded;
         }
     }
 
@@ -51,12 +72,14 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
                 if (i == 0)
                 {
                     Node newNode = new Node(null, moveList[i].coordX, moveList[i].coordY, moveList[i].childNumber, moveList[i].currentStep);
+                    newNode.visited = true;
                     root = newNode;
                 }
                 else
                 {
                     Node father = search(moveList[i-1].coordX, moveList[i-1].coordY);
 
+                    //No se repitan nodos nuevos
                     Node newNode = search(moveList[i].coordX, moveList[i].coordY);
 
                     if (newNode != null)
@@ -68,8 +91,10 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
                     {
                         //no existe
                         newNode = new Node(father, moveList[i].coordX, moveList[i].coordY, moveList[i].childNumber, moveList[i].currentStep);
+                        newNode.visited = true;
+                        father.childList.Add(newNode);
                     }
-                    father.childList.Add(newNode);
+                    
                 }
             }
         }
@@ -98,6 +123,14 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
             }
 
             return null;
+        }
+
+        public void printTree(Node node)
+        {
+            Queue<Node> queue = new Queue<Node>();
+            queue.Enqueue(root);
+
+            
         }
     }
 }

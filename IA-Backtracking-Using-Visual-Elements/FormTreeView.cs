@@ -14,9 +14,12 @@ namespace IA_Backtracking_Using_Visual_Elements
     public partial class FormTreeView : Form
     {
         Tree tree;
+
+
         public FormTreeView(ref List<Move> moveList)
         {
             InitializeComponent();
+
             tree = new Tree(moveList);
             tree.generateTree();
         }
@@ -26,6 +29,8 @@ namespace IA_Backtracking_Using_Visual_Elements
             char a = 'A';
             a += (char) tree.root.posX;
             treeView.Nodes.Add(a + "," + tree.root.posY);
+
+            treeView.Nodes.Add(a + "," + tree.search(tree.root.posX, tree.root.posY));
         }
     }
 }
