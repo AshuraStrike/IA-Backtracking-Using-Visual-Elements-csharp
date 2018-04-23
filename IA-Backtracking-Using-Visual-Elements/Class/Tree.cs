@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace IA_Backtracking_Using_Visual_Elements.Class
 {
@@ -125,28 +126,35 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
             return null;
         }
 
-        public void print(int x, int y)
+        public void print(ref TreeView treeView)
         {
-            printTree(root);
+            for (int i = 0; i < root.childList.Count; i++)
+            {
+                printTree(root.childList[i], treeView.Nodes[0]);
+            }
         }
 
-        private void printTree(Node node)
+        private void printTree(Node node,TreeNode newNode)
         {
-            Node father = null;
 
             if (node != null)
             {
-                
+                //Extract info
+                char a = 'A';
+                a += (char) node.posX;
+                newNode.Nodes.Add(a+","+(node.posY+1)+"\n"+
+                    "Numero de hijos: "+node.numberOfChilds+'\n');
             }
 
             for (int i = 0; i < node.childList.Count; i++)
             {
-                //father = printTree(node.childList[i]);
-                if (father != null)
-                {
-                    
-                }
+                printTree(node.childList[i], newNode.Nodes[0]);
             }
+
+            /*for (int i = 0; i < node.childList.Count; i++)
+            {
+                
+            }*/
         }
     }
 }

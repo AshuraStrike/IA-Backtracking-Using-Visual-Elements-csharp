@@ -518,6 +518,7 @@ namespace IA_Backtracking_Using_Visual_Elements
         {
             FormTreeView TreeWIndow = new FormTreeView(ref moveList);
             TreeWIndow.ShowDialog();
+            buttonPlay.Focus();
         }
 
         public int checkChild(int x,int y)

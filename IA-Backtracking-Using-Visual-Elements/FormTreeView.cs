@@ -26,10 +26,12 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         private void FormTreeView_Load(object sender, EventArgs e)
         {
+            //Extract info root
             char a = 'A';
             a += (char) tree.root.posX;
-            treeView.Nodes.Add(a + "," + tree.root.posY);
+            treeView.Nodes.Add(a + "," + (tree.root.posY+1));
 
+            tree.print(ref treeView);
 
         }
     }
