@@ -68,6 +68,8 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
 
         public void generateTree()
         {
+            Node currentNode = null;
+
             for(int i = 0; i < moveList.Count; i++)
             {
                 if (i == 0)
@@ -75,18 +77,22 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
                     Node newNode = new Node(null, moveList[i].coordX, moveList[i].coordY, moveList[i].childNumber, moveList[i].currentStep);
                     newNode.visited = true;
                     root = newNode;
+
+                    currentNode = newNode;
                 }
                 else
                 {
-                    Node father = search(moveList[i-1].coordX, moveList[i-1].coordY);
+                    Node father = currentNode;
 
-                    //No se repitan nodos nuevos
+                    //No se repitan nodos nuevos (Banderear, si o no se repite)
                     Node newNode = search(moveList[i].coordX, moveList[i].coordY);
 
                     if (newNode != null)
                     {
                         //existe
                         newNode.visitList.Add(moveList[i].currentStep);
+
+                        currentNode = newNode;
                     }
                     else
                     {
@@ -94,6 +100,8 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
                         newNode = new Node(father, moveList[i].coordX, moveList[i].coordY, moveList[i].childNumber, moveList[i].currentStep);
                         newNode.visited = true;
                         father.childList.Add(newNode);
+
+                        currentNode = newNode;
                     }
                     
                 }
@@ -136,25 +144,25 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
 
         private void printTree(Node node,TreeNode newNode)
         {
-
             if (node != null)
             {
+                string visits = "";
+                for(int i = 0; i < node.visitList.Count; i++)
+                {
+                    visits += node.visitList[i].ToString()+", ";
+                }
                 //Extract info
                 char a = 'A';
                 a += (char) node.posX;
                 newNode.Nodes.Add(a+","+(node.posY+1)+"\n"+
-                    "Numero de hijos: "+node.numberOfChilds+'\n');
+                    " Numero de hijos: "+node.numberOfChilds+'\n'+
+                    " Visitas: "+visits);
             }
 
             for (int i = 0; i < node.childList.Count; i++)
             {
                 printTree(node.childList[i], newNode.Nodes[0]);
             }
-
-            /*for (int i = 0; i < node.childList.Count; i++)
-            {
-                
-            }*/
         }
     }
 }
