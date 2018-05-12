@@ -39,6 +39,10 @@ namespace IA_Backtracking_Using_Visual_Elements
                     " Visitas: " + visits);
             tree.print(ref treeView);
 
+            /*treeView.Nodes.Add("B1").Nodes.Add("B2");
+
+            treeView.Nodes[0].Nodes.Add("C1");*/
+
         }
     }
 }

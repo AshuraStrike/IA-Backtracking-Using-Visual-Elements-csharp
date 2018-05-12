@@ -142,7 +142,7 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
             }
         }
 
-        private void printTree(Node node,TreeNode newNode)
+        private void printTree(Node node,TreeNode parentNode)
         {
             if (node != null)
             {
@@ -154,14 +154,14 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
                 //Extract info
                 char a = 'A';
                 a += (char) node.posX;
-                newNode.Nodes.Add(a+","+(node.posY+1)+"\n"+
+                parentNode = parentNode.Nodes.Add(a+","+(node.posY+1)+"\n"+
                     " Numero de hijos: "+node.numberOfChilds+'\n'+
                     " Visitas: "+visits);
             }
 
             for (int i = 0; i < node.childList.Count; i++)
             {
-                printTree(node.childList[i], newNode.Nodes[0]);
+                printTree(node.childList[i], parentNode);
             }
         }
     }
