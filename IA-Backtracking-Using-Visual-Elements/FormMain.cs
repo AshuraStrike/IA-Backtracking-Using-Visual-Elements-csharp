@@ -39,6 +39,8 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         List<Move> moveList;
 
+        List<int> expantionOrderList;
+
         Brush alphaGreenBrush;
         Brush alphaOrangeBrush;
 
@@ -72,6 +74,8 @@ namespace IA_Backtracking_Using_Visual_Elements
             moveList = new List<Move>();
 
             formGraphics = this.CreateGraphics();
+
+            expantionOrderList = new List<int>();
         }
 
         private void buttonExamine_Click(object sender, EventArgs e)
@@ -189,14 +193,12 @@ namespace IA_Backtracking_Using_Visual_Elements
                 // Draw Coordenates
                 for (int y = 0; y < mapa.Count; y++)
                 {
-                    //formGraphics.DrawRectangle(pen, panelMapa.Location.X - CELL_WIDTH - 1, panelMapa.Location.Y+(CELL_WIDTH*y), CELL_WIDTH, CELL_WIDTH);
                     string text = (y + 1).ToString();
                     formGraphics.DrawString(text, font, brushRed, panelMap.Location.X - CELL_WIDTH - 1, panelMap.Location.Y + (y * CELL_WIDTH) + (CELL_WIDTH / 2) - 7f);
                 }
 
                 for (int x = 0; x < mapa[0].Count; x++)
                 {
-                    //formGraphics.DrawRectangle(pen, panelMapa.Location.X+(x*CELL_WIDTH), panelMapa.Location.Y - CELL_WIDTH - 1, CELL_WIDTH, CELL_WIDTH);
                     string text = a.ToString();
                     formGraphics.DrawString(text, font, brushRed, panelMap.Location.X + (x * CELL_WIDTH), panelMap.Location.Y - (CELL_WIDTH / 2) - 7f);
                     a += (char)1;
@@ -222,10 +224,6 @@ namespace IA_Backtracking_Using_Visual_Elements
 
                             graphics.DrawString(mapa[i][j].listStepsString(), font, brushRed, j * CELL_WIDTH, i * CELL_WIDTH);
                         }
-                        else
-                        {
-
-                        }
                     }
                 }
             }
@@ -238,7 +236,7 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            if (!playing && character!=null && finalXY.X>-1)
+            if (!playing && character != null && finalXY.X>-1)
             {   //Empezar
                 moveList.Clear();
                 resetMapNumbers();
@@ -306,6 +304,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                             //Si encuentra el id
                             if ((character.coordinateX - 1)>-1 && character.idCostList[i].id == mapa[character.coordinateY][character.coordinateX-1].TerrainId)
                             {
+                                // y este no es N/A
                                 if (character.idCostList[i].cost > -1)
                                 {
                                     if (character.coordinateX > 0) character.coordinateX -= 1;
@@ -322,6 +321,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                             //Si encuentra el id
                             if ((character.coordinateX + 1) < mapa[0].Count && character.idCostList[i].id == mapa[character.coordinateY][character.coordinateX + 1].TerrainId)
                             {
+                                // y este no es N/A
                                 if (character.idCostList[i].cost > -1)
                                 {
                                     if (character.coordinateX < mapa[0].Count - 1) character.coordinateX += 1;
@@ -338,6 +338,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                             //Si encuentra el id
                             if ((character.coordinateY - 1) > -1 && character.idCostList[i].id == mapa[character.coordinateY - 1][character.coordinateX].TerrainId)
                             {
+                                // y este no es N/A
                                 if (character.idCostList[i].cost > -1)
                                 {
                                     if (character.coordinateY > 0) character.coordinateY -= 1;
@@ -354,6 +355,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                             //Si encuentra el id
                             if ((character.coordinateY + 1) < mapa.Count && character.idCostList[i].id == mapa[character.coordinateY + 1][character.coordinateX].TerrainId)
                             {
+                                // y este no es N/A
                                 if (character.idCostList[i].cost > -1)
                                 {
                                     if (character.coordinateY < mapa.Count - 1) character.coordinateY += 1;
@@ -364,7 +366,8 @@ namespace IA_Backtracking_Using_Visual_Elements
                         }
                         break;
                 }
-                if (moved) {
+                if (moved)
+                {
                     character.currentStep++;
                     mapa[character.coordinateY][character.coordinateX].listSteps.Add(character.currentStep);
                     unveilKnown();
@@ -384,6 +387,7 @@ namespace IA_Backtracking_Using_Visual_Elements
             {
                 FormNewCharacter NewCharacterWindow = new FormNewCharacter(ref noRepeat);
                 NewCharacterWindow.ShowDialog();
+                expantionOrderList = NewCharacterWindow.GetExpantionOrder;
 
                 isCreated = NewCharacterWindow.GetisCreated;
                 if(isCreated)
@@ -539,5 +543,18 @@ namespace IA_Backtracking_Using_Visual_Elements
             return child;
         }
 
+        // ALGORITMO BACKTRACKING OMFG YEAH!!!!!!!! 
+        // A HUEVITO :3 <3 LEL
+        private void buttonBacktracking_Click(object sender, EventArgs e)
+        {
+            //Elegir orden de expansion de los nodos
+            // -> expantionOrderList
+
+            //Inserto Nodo inicial en la pila
+            
+            // Voy al ultimo elemento de la pila
+
+            // Si no es mi nodo final y le quedan hijos
+        }
     }
 }

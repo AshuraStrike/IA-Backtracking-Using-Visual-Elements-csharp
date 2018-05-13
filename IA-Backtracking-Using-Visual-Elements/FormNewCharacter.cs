@@ -145,6 +145,7 @@ namespace IA_Backtracking_Using_Visual_Elements
         {
             if (CheckBoxNA.Checked)
             {
+                textBoxCost.Text = "";
                 textBoxCost.Enabled = false;
             }
             else
@@ -157,7 +158,9 @@ namespace IA_Backtracking_Using_Visual_Elements
         {
             listBoxExpantionOrder.Items.Clear();
             string text = "";
-            for (int i = 0; i < 4; i++) {
+
+            for (int i = 0; i < 4; i++)
+            {
                 switch (expantionOrder[i])
                 {
                     case 0:
@@ -178,6 +181,8 @@ namespace IA_Backtracking_Using_Visual_Elements
         }
         public Character GetCharacter { get { return character; } }
         public bool GetisCreated { get { return isCreated; } }
+        public List<int> GetExpantionOrder { get { return expantionOrder; } }
+        public bool GetRepeat { get { return checkBoxRepeat.Checked; } }
 
         private void buttonSubir_Click(object sender, EventArgs e)
         {

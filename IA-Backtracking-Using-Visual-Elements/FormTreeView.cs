@@ -31,6 +31,7 @@ namespace IA_Backtracking_Using_Visual_Elements
             {
                 visits += tree.root.visitList[i].ToString() + ", ";
             }
+
             //Extract info root
             char a = 'A';
             a += (char) tree.root.posX;
@@ -38,11 +39,6 @@ namespace IA_Backtracking_Using_Visual_Elements
                     " Numero de hijos: " + tree.root.numberOfChilds + '\n' +
                     " Visitas: " + visits);
             tree.print(ref treeView);
-
-            /*treeView.Nodes.Add("B1").Nodes.Add("B2");
-
-            treeView.Nodes[0].Nodes.Add("C1");*/
-
         }
     }
 }

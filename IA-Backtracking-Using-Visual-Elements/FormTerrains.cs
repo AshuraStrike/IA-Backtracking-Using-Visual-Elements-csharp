@@ -105,7 +105,8 @@ namespace IA_Backtracking_Using_Visual_Elements
                     }
                 }
                 success = true;
-            //Cierra la ventana cuando hemos terminado
+                
+                //Cierra la ventana cuando hemos terminado
                 this.Close();
             }
             else
@@ -113,11 +114,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                 GroundListBox.SelectedIndex++;
             }
         }
-
-        private void PreviousButton_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         //tipos de terreno en combobox
         private void GroundTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)

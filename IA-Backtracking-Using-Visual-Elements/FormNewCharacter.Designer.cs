@@ -48,37 +48,37 @@
             // ListBoxTerrain
             // 
             this.ListBoxTerrain.FormattingEnabled = true;
-            this.ListBoxTerrain.Location = new System.Drawing.Point(10, 152);
-            this.ListBoxTerrain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ListBoxTerrain.ItemHeight = 16;
+            this.ListBoxTerrain.Location = new System.Drawing.Point(13, 187);
+            this.ListBoxTerrain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ListBoxTerrain.Name = "ListBoxTerrain";
-            this.ListBoxTerrain.Size = new System.Drawing.Size(116, 173);
+            this.ListBoxTerrain.Size = new System.Drawing.Size(153, 212);
             this.ListBoxTerrain.TabIndex = 16;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(154, 175);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(205, 215);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 13);
+            this.label2.Size = new System.Drawing.Size(206, 17);
             this.label2.TabIndex = 18;
             this.label2.Text = "Ingrese el costo del movimiento";
             // 
             // textBoxCost
             // 
-            this.textBoxCost.Location = new System.Drawing.Point(157, 191);
-            this.textBoxCost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxCost.Location = new System.Drawing.Point(209, 235);
+            this.textBoxCost.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCost.Name = "textBoxCost";
-            this.textBoxCost.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCost.Size = new System.Drawing.Size(132, 22);
             this.textBoxCost.TabIndex = 19;
             this.textBoxCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCost_KeyPress);
             // 
             // ButtonNext
             // 
-            this.ButtonNext.Location = new System.Drawing.Point(238, 258);
-            this.ButtonNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonNext.Location = new System.Drawing.Point(317, 318);
+            this.ButtonNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonNext.Name = "ButtonNext";
-            this.ButtonNext.Size = new System.Drawing.Size(71, 42);
+            this.ButtonNext.Size = new System.Drawing.Size(95, 52);
             this.ButtonNext.TabIndex = 20;
             this.ButtonNext.Text = "Siguiente";
             this.ButtonNext.UseVisualStyleBackColor = true;
@@ -93,30 +93,29 @@
             "Tejon",
             "Pez",
             "Lobo"});
-            this.ComboBoxImage.Location = new System.Drawing.Point(157, 42);
-            this.ComboBoxImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ComboBoxImage.Location = new System.Drawing.Point(209, 52);
+            this.ComboBoxImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ComboBoxImage.Name = "ComboBoxImage";
-            this.ComboBoxImage.Size = new System.Drawing.Size(92, 21);
+            this.ComboBoxImage.Size = new System.Drawing.Size(121, 24);
             this.ComboBoxImage.TabIndex = 22;
             this.ComboBoxImage.SelectedIndexChanged += new System.EventHandler(this.ComboBoxImage_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(154, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(205, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(84, 17);
             this.label1.TabIndex = 23;
             this.label1.Text = "Elija imagen";
             // 
             // CheckBoxNA
             // 
             this.CheckBoxNA.AutoSize = true;
-            this.CheckBoxNA.Location = new System.Drawing.Point(157, 214);
-            this.CheckBoxNA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CheckBoxNA.Location = new System.Drawing.Point(209, 263);
+            this.CheckBoxNA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CheckBoxNA.Name = "CheckBoxNA";
-            this.CheckBoxNA.Size = new System.Drawing.Size(46, 17);
+            this.CheckBoxNA.Size = new System.Drawing.Size(53, 21);
             this.CheckBoxNA.TabIndex = 24;
             this.CheckBoxNA.Text = "N/A";
             this.CheckBoxNA.UseVisualStyleBackColor = true;
@@ -124,18 +123,20 @@
             // 
             // pictureBoxCharacter
             // 
-            this.pictureBoxCharacter.Location = new System.Drawing.Point(10, 11);
+            this.pictureBoxCharacter.Location = new System.Drawing.Point(13, 14);
+            this.pictureBoxCharacter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxCharacter.Name = "pictureBoxCharacter";
-            this.pictureBoxCharacter.Size = new System.Drawing.Size(128, 128);
+            this.pictureBoxCharacter.Size = new System.Drawing.Size(171, 158);
             this.pictureBoxCharacter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCharacter.TabIndex = 15;
             this.pictureBoxCharacter.TabStop = false;
             // 
             // buttonSubir
             // 
-            this.buttonSubir.Location = new System.Drawing.Point(486, 85);
+            this.buttonSubir.Location = new System.Drawing.Point(648, 105);
+            this.buttonSubir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSubir.Name = "buttonSubir";
-            this.buttonSubir.Size = new System.Drawing.Size(40, 23);
+            this.buttonSubir.Size = new System.Drawing.Size(53, 28);
             this.buttonSubir.TabIndex = 26;
             this.buttonSubir.Text = "Subir";
             this.buttonSubir.UseVisualStyleBackColor = true;
@@ -143,9 +144,10 @@
             // 
             // buttonBajar
             // 
-            this.buttonBajar.Location = new System.Drawing.Point(486, 114);
+            this.buttonBajar.Location = new System.Drawing.Point(648, 140);
+            this.buttonBajar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonBajar.Name = "buttonBajar";
-            this.buttonBajar.Size = new System.Drawing.Size(40, 23);
+            this.buttonBajar.Size = new System.Drawing.Size(53, 28);
             this.buttonBajar.TabIndex = 27;
             this.buttonBajar.Text = "Bajar";
             this.buttonBajar.UseVisualStyleBackColor = true;
@@ -154,26 +156,30 @@
             // listBoxExpantionOrder
             // 
             this.listBoxExpantionOrder.FormattingEnabled = true;
-            this.listBoxExpantionOrder.Location = new System.Drawing.Point(368, 31);
+            this.listBoxExpantionOrder.ItemHeight = 16;
+            this.listBoxExpantionOrder.Location = new System.Drawing.Point(491, 38);
+            this.listBoxExpantionOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxExpantionOrder.Name = "listBoxExpantionOrder";
-            this.listBoxExpantionOrder.Size = new System.Drawing.Size(112, 108);
+            this.listBoxExpantionOrder.Size = new System.Drawing.Size(148, 132);
             this.listBoxExpantionOrder.TabIndex = 28;
             // 
             // labelExpantionOrder
             // 
             this.labelExpantionOrder.AutoSize = true;
-            this.labelExpantionOrder.Location = new System.Drawing.Point(365, 15);
+            this.labelExpantionOrder.Location = new System.Drawing.Point(487, 18);
+            this.labelExpantionOrder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelExpantionOrder.Name = "labelExpantionOrder";
-            this.labelExpantionOrder.Size = new System.Drawing.Size(105, 13);
+            this.labelExpantionOrder.Size = new System.Drawing.Size(140, 17);
             this.labelExpantionOrder.TabIndex = 29;
             this.labelExpantionOrder.Text = "Orden de expansión:";
             // 
             // checkBoxRepeat
             // 
             this.checkBoxRepeat.AutoSize = true;
-            this.checkBoxRepeat.Location = new System.Drawing.Point(436, 214);
+            this.checkBoxRepeat.Location = new System.Drawing.Point(604, 249);
+            this.checkBoxRepeat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBoxRepeat.Name = "checkBoxRepeat";
-            this.checkBoxRepeat.Size = new System.Drawing.Size(40, 17);
+            this.checkBoxRepeat.Size = new System.Drawing.Size(48, 21);
             this.checkBoxRepeat.TabIndex = 30;
             this.checkBoxRepeat.Text = "No";
             this.checkBoxRepeat.UseVisualStyleBackColor = true;
@@ -182,17 +188,18 @@
             // labelRepeat
             // 
             this.labelRepeat.AutoSize = true;
-            this.labelRepeat.Location = new System.Drawing.Point(349, 215);
+            this.labelRepeat.Location = new System.Drawing.Point(488, 251);
+            this.labelRepeat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelRepeat.Name = "labelRepeat";
-            this.labelRepeat.Size = new System.Drawing.Size(81, 13);
+            this.labelRepeat.Size = new System.Drawing.Size(107, 17);
             this.labelRepeat.TabIndex = 31;
             this.labelRepeat.Text = "Repetir Nodos?";
             // 
             // FormNewCharacter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 344);
+            this.ClientSize = new System.Drawing.Size(773, 423);
             this.Controls.Add(this.labelRepeat);
             this.Controls.Add(this.checkBoxRepeat);
             this.Controls.Add(this.labelExpantionOrder);
@@ -207,9 +214,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ListBoxTerrain);
             this.Controls.Add(this.pictureBoxCharacter);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormNewCharacter";
-            this.Text = "WEa alv compa >:v";
+            this.Text = "Crear Personaje";
             this.Load += new System.EventHandler(this.FormNewCharacter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharacter)).EndInit();
             this.ResumeLayout(false);
