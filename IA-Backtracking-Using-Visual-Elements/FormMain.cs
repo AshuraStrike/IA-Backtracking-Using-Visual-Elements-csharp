@@ -213,7 +213,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                 {
                     for (int j = 0; j < mapa[0].Count; j++)
                     {
-                        if (mapa[i][j].veiled == false || playing==false)
+                        if (mapa[i][j].veiled == false || playing==false || (finalXY.X == j && finalXY.Y == i))
                         {
                             graphics.DrawImage(mapa[i][j].texture, j * CELL_WIDTH, i * CELL_WIDTH);
 
