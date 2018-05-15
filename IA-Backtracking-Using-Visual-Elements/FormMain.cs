@@ -52,6 +52,10 @@ namespace IA_Backtracking_Using_Visual_Elements
             panelMap.Width = 0;
             panelMap.Height = 0;
 
+            ButtonTree.Enabled = false;
+            checkBoxBacktracking.Enabled = false;
+            checkBoxAStar.Enabled = false;
+
             // Inicializa el mapa donde irán las celdas
             mapa = new Map();
 
@@ -246,6 +250,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                 GroundButton.Enabled = false;
                 buttonCharacter.Enabled = false;
                 buttonFinalCoord.Enabled = false;
+                ButtonTree.Enabled = true;
                 playing = !playing;
 
                 character.currentStep = 1;
@@ -435,6 +440,9 @@ namespace IA_Backtracking_Using_Visual_Elements
                 {
                     panelMap.Refresh();
                     MessageBox.Show("Posicion final: " + labelSelectedX.Text + "," + labelSelectedY.Text, "Posicion final seleccionada!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    checkBoxBacktracking.Enabled = true;
+                    checkBoxAStar.Enabled = true;
                 }
             }
         }
@@ -543,18 +551,29 @@ namespace IA_Backtracking_Using_Visual_Elements
             return child;
         }
 
-        // ALGORITMO BACKTRACKING OMFG YEAH!!!!!!!! 
-        // A HUEVITO :3 <3 LEL
-        private void buttonBacktracking_Click(object sender, EventArgs e)
+        private void checkBoxBacktracking_CheckedChanged(object sender, EventArgs e)
         {
-            //Elegir orden de expansion de los nodos
-            // -> expantionOrderList
+            if (checkBoxBacktracking.Checked)
+            {
+                checkBoxAStar.Checked = false;
+            }
+        }
 
-            //Inserto Nodo inicial en la pila
+        private void checkBoxAStar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAStar.Checked)
+            {
+                checkBoxBacktracking.Checked = false;
+            }
+        }
+
+        // Algoritmo de Backtracking OMFG YEAH!!! :3 <3
+        public void backtracking()
+        {
+            //Elegir un orden de expansion
+            // expantionOrderList
+
             
-            // Voy al ultimo elemento de la pila
-
-            // Si no es mi nodo final y le quedan hijos
         }
     }
 }

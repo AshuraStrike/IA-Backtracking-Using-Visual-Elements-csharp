@@ -78,6 +78,16 @@ namespace IA_Backtracking_Using_Visual_Elements
             texture = pictureBoxTerrain.Image;
             TerrainName = GroundTypeComboBox.Items[GroundTypeComboBox.SelectedIndex].ToString();
 
+            // VALIDACION: no se pueden repetir terrenos
+            for(int i = 0; i < noRepeatNumber.Count; i++)
+            {
+                if(noRepeatNumber[i].texture == texture)
+                {
+                    MessageBox.Show("No puedes repetir terrenos", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
             noRepeatNumber[GroundListBox.SelectedIndex].texture = texture;
             noRepeatNumber[GroundListBox.SelectedIndex].TerrainName = TerrainName;
             

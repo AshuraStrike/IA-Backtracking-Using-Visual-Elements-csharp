@@ -151,6 +151,7 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
                 {
                     visits += node.visitList[i].ToString()+", ";
                 }
+
                 //Extract info
                 char a = 'A';
                 a += (char) node.posX;

@@ -40,15 +40,15 @@
             this.buttonFinalCoord = new System.Windows.Forms.Button();
             this.buttonInitialCord = new System.Windows.Forms.Button();
             this.ButtonTree = new System.Windows.Forms.Button();
-            this.buttonBacktracking = new System.Windows.Forms.Button();
-            this.buttonAEstrella = new System.Windows.Forms.Button();
+            this.checkBoxBacktracking = new System.Windows.Forms.CheckBox();
+            this.checkBoxAStar = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // panelMap
             // 
             this.panelMap.BackColor = System.Drawing.Color.White;
             this.panelMap.Location = new System.Drawing.Point(59, 90);
-            this.panelMap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMap.Margin = new System.Windows.Forms.Padding(4);
             this.panelMap.Name = "panelMap";
             this.panelMap.Size = new System.Drawing.Size(640, 591);
             this.panelMap.TabIndex = 0;
@@ -68,7 +68,7 @@
             // buttonExamine
             // 
             this.buttonExamine.Location = new System.Drawing.Point(16, 15);
-            this.buttonExamine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonExamine.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExamine.Name = "buttonExamine";
             this.buttonExamine.Size = new System.Drawing.Size(100, 28);
             this.buttonExamine.TabIndex = 1;
@@ -94,7 +94,7 @@
             // buttonPlay
             // 
             this.buttonPlay.Location = new System.Drawing.Point(783, 467);
-            this.buttonPlay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonPlay.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPlay.Name = "buttonPlay";
             this.buttonPlay.Size = new System.Drawing.Size(133, 42);
             this.buttonPlay.TabIndex = 4;
@@ -108,7 +108,7 @@
             // 
             this.buttonCharacter.Enabled = false;
             this.buttonCharacter.Location = new System.Drawing.Point(783, 138);
-            this.buttonCharacter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCharacter.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCharacter.Name = "buttonCharacter";
             this.buttonCharacter.Size = new System.Drawing.Size(133, 42);
             this.buttonCharacter.TabIndex = 5;
@@ -152,7 +152,7 @@
             // 
             this.buttonFinalCoord.Enabled = false;
             this.buttonFinalCoord.Location = new System.Drawing.Point(852, 238);
-            this.buttonFinalCoord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFinalCoord.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFinalCoord.Name = "buttonFinalCoord";
             this.buttonFinalCoord.Size = new System.Drawing.Size(100, 42);
             this.buttonFinalCoord.TabIndex = 12;
@@ -165,7 +165,7 @@
             // 
             this.buttonInitialCord.Enabled = false;
             this.buttonInitialCord.Location = new System.Drawing.Point(749, 238);
-            this.buttonInitialCord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonInitialCord.Margin = new System.Windows.Forms.Padding(4);
             this.buttonInitialCord.Name = "buttonInitialCord";
             this.buttonInitialCord.Size = new System.Drawing.Size(100, 42);
             this.buttonInitialCord.TabIndex = 13;
@@ -177,7 +177,7 @@
             // ButtonTree
             // 
             this.ButtonTree.Location = new System.Drawing.Point(783, 539);
-            this.ButtonTree.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonTree.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonTree.Name = "ButtonTree";
             this.ButtonTree.Size = new System.Drawing.Size(133, 42);
             this.ButtonTree.TabIndex = 14;
@@ -186,34 +186,35 @@
             this.ButtonTree.UseVisualStyleBackColor = true;
             this.ButtonTree.Click += new System.EventHandler(this.ButtonTree_Click);
             // 
-            // buttonBacktracking
+            // checkBoxBacktracking
             // 
-            this.buttonBacktracking.Location = new System.Drawing.Point(783, 329);
-            this.buttonBacktracking.Name = "buttonBacktracking";
-            this.buttonBacktracking.Size = new System.Drawing.Size(133, 39);
-            this.buttonBacktracking.TabIndex = 15;
-            this.buttonBacktracking.TabStop = false;
-            this.buttonBacktracking.Text = "Backtracking";
-            this.buttonBacktracking.UseVisualStyleBackColor = true;
-            this.buttonBacktracking.Click += new System.EventHandler(this.buttonBacktracking_Click);
+            this.checkBoxBacktracking.AutoSize = true;
+            this.checkBoxBacktracking.Location = new System.Drawing.Point(783, 333);
+            this.checkBoxBacktracking.Name = "checkBoxBacktracking";
+            this.checkBoxBacktracking.Size = new System.Drawing.Size(111, 21);
+            this.checkBoxBacktracking.TabIndex = 15;
+            this.checkBoxBacktracking.Text = "Backtracking";
+            this.checkBoxBacktracking.UseVisualStyleBackColor = true;
+            this.checkBoxBacktracking.CheckedChanged += new System.EventHandler(this.checkBoxBacktracking_CheckedChanged);
             // 
-            // buttonAEstrella
+            // checkBoxAStar
             // 
-            this.buttonAEstrella.Location = new System.Drawing.Point(783, 374);
-            this.buttonAEstrella.Name = "buttonAEstrella";
-            this.buttonAEstrella.Size = new System.Drawing.Size(133, 39);
-            this.buttonAEstrella.TabIndex = 16;
-            this.buttonAEstrella.TabStop = false;
-            this.buttonAEstrella.Text = "A*";
-            this.buttonAEstrella.UseVisualStyleBackColor = true;
+            this.checkBoxAStar.AutoSize = true;
+            this.checkBoxAStar.Location = new System.Drawing.Point(783, 360);
+            this.checkBoxAStar.Name = "checkBoxAStar";
+            this.checkBoxAStar.Size = new System.Drawing.Size(44, 21);
+            this.checkBoxAStar.TabIndex = 16;
+            this.checkBoxAStar.Text = "A*";
+            this.checkBoxAStar.UseVisualStyleBackColor = true;
+            this.checkBoxAStar.CheckedChanged += new System.EventHandler(this.checkBoxAStar_CheckedChanged);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 750);
-            this.Controls.Add(this.buttonAEstrella);
-            this.Controls.Add(this.buttonBacktracking);
+            this.Controls.Add(this.checkBoxAStar);
+            this.Controls.Add(this.checkBoxBacktracking);
             this.Controls.Add(this.ButtonTree);
             this.Controls.Add(this.buttonInitialCord);
             this.Controls.Add(this.buttonFinalCoord);
@@ -227,7 +228,7 @@
             this.Controls.Add(this.labelRoute);
             this.Controls.Add(this.panelMap);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -254,8 +255,8 @@
         private System.Windows.Forms.Button buttonFinalCoord;
         private System.Windows.Forms.Button buttonInitialCord;
         private System.Windows.Forms.Button ButtonTree;
-        private System.Windows.Forms.Button buttonBacktracking;
-        private System.Windows.Forms.Button buttonAEstrella;
+        private System.Windows.Forms.CheckBox checkBoxBacktracking;
+        private System.Windows.Forms.CheckBox checkBoxAStar;
     }
 }
 
