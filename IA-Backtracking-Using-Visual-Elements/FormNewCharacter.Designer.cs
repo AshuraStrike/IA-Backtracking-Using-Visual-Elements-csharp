@@ -36,8 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CheckBoxNA = new System.Windows.Forms.CheckBox();
             this.pictureBoxCharacter = new System.Windows.Forms.PictureBox();
-            this.buttonSubir = new System.Windows.Forms.Button();
-            this.buttonBajar = new System.Windows.Forms.Button();
+            this.buttonUp = new System.Windows.Forms.Button();
+            this.buttonDown = new System.Windows.Forms.Button();
             this.listBoxExpantionOrder = new System.Windows.Forms.ListBox();
             this.labelExpantionOrder = new System.Windows.Forms.Label();
             this.checkBoxRepeat = new System.Windows.Forms.CheckBox();
@@ -124,41 +124,41 @@
             // pictureBoxCharacter
             // 
             this.pictureBoxCharacter.Location = new System.Drawing.Point(13, 14);
-            this.pictureBoxCharacter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxCharacter.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxCharacter.Name = "pictureBoxCharacter";
             this.pictureBoxCharacter.Size = new System.Drawing.Size(171, 158);
             this.pictureBoxCharacter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCharacter.TabIndex = 15;
             this.pictureBoxCharacter.TabStop = false;
             // 
-            // buttonSubir
+            // buttonUp
             // 
-            this.buttonSubir.Location = new System.Drawing.Point(648, 105);
-            this.buttonSubir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonSubir.Name = "buttonSubir";
-            this.buttonSubir.Size = new System.Drawing.Size(53, 28);
-            this.buttonSubir.TabIndex = 26;
-            this.buttonSubir.Text = "Subir";
-            this.buttonSubir.UseVisualStyleBackColor = true;
-            this.buttonSubir.Click += new System.EventHandler(this.buttonSubir_Click);
+            this.buttonUp.Location = new System.Drawing.Point(648, 105);
+            this.buttonUp.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonUp.Name = "buttonUp";
+            this.buttonUp.Size = new System.Drawing.Size(53, 28);
+            this.buttonUp.TabIndex = 26;
+            this.buttonUp.Text = "Subir";
+            this.buttonUp.UseVisualStyleBackColor = true;
+            this.buttonUp.Click += new System.EventHandler(this.buttonSubir_Click);
             // 
-            // buttonBajar
+            // buttonDown
             // 
-            this.buttonBajar.Location = new System.Drawing.Point(648, 140);
-            this.buttonBajar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonBajar.Name = "buttonBajar";
-            this.buttonBajar.Size = new System.Drawing.Size(53, 28);
-            this.buttonBajar.TabIndex = 27;
-            this.buttonBajar.Text = "Bajar";
-            this.buttonBajar.UseVisualStyleBackColor = true;
-            this.buttonBajar.Click += new System.EventHandler(this.buttonBajar_Click);
+            this.buttonDown.Location = new System.Drawing.Point(648, 140);
+            this.buttonDown.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonDown.Name = "buttonDown";
+            this.buttonDown.Size = new System.Drawing.Size(53, 28);
+            this.buttonDown.TabIndex = 27;
+            this.buttonDown.Text = "Bajar";
+            this.buttonDown.UseVisualStyleBackColor = true;
+            this.buttonDown.Click += new System.EventHandler(this.buttonBajar_Click);
             // 
             // listBoxExpantionOrder
             // 
             this.listBoxExpantionOrder.FormattingEnabled = true;
             this.listBoxExpantionOrder.ItemHeight = 16;
             this.listBoxExpantionOrder.Location = new System.Drawing.Point(491, 38);
-            this.listBoxExpantionOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxExpantionOrder.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxExpantionOrder.Name = "listBoxExpantionOrder";
             this.listBoxExpantionOrder.Size = new System.Drawing.Size(148, 132);
             this.listBoxExpantionOrder.TabIndex = 28;
@@ -177,7 +177,7 @@
             // 
             this.checkBoxRepeat.AutoSize = true;
             this.checkBoxRepeat.Location = new System.Drawing.Point(604, 249);
-            this.checkBoxRepeat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxRepeat.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxRepeat.Name = "checkBoxRepeat";
             this.checkBoxRepeat.Size = new System.Drawing.Size(48, 21);
             this.checkBoxRepeat.TabIndex = 30;
@@ -204,8 +204,8 @@
             this.Controls.Add(this.checkBoxRepeat);
             this.Controls.Add(this.labelExpantionOrder);
             this.Controls.Add(this.listBoxExpantionOrder);
-            this.Controls.Add(this.buttonBajar);
-            this.Controls.Add(this.buttonSubir);
+            this.Controls.Add(this.buttonDown);
+            this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.CheckBoxNA);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ComboBoxImage);
@@ -234,8 +234,8 @@
         private System.Windows.Forms.ComboBox ComboBoxImage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox CheckBoxNA;
-        private System.Windows.Forms.Button buttonSubir;
-        private System.Windows.Forms.Button buttonBajar;
+        private System.Windows.Forms.Button buttonUp;
+        private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.ListBox listBoxExpantionOrder;
         private System.Windows.Forms.Label labelExpantionOrder;
         private System.Windows.Forms.CheckBox checkBoxRepeat;

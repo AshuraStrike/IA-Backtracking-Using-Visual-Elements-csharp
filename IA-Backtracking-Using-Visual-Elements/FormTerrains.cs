@@ -81,7 +81,7 @@ namespace IA_Backtracking_Using_Visual_Elements
             // VALIDACION: no se pueden repetir terrenos
             for(int i = 0; i < noRepeatNumber.Count; i++)
             {
-                if(noRepeatNumber[i].texture == texture)
+                if(noRepeatNumber[i].TerrainName == TerrainName)
                 {
                     MessageBox.Show("No puedes repetir terrenos", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
