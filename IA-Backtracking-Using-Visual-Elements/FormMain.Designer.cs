@@ -42,6 +42,7 @@
             this.ButtonTree = new System.Windows.Forms.Button();
             this.checkBoxBacktracking = new System.Windows.Forms.CheckBox();
             this.checkBoxAStar = new System.Windows.Forms.CheckBox();
+            this.checkBoxRepeat = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // panelMap
@@ -208,11 +209,22 @@
             this.checkBoxAStar.UseVisualStyleBackColor = true;
             this.checkBoxAStar.CheckedChanged += new System.EventHandler(this.checkBoxAStar_CheckedChanged);
             // 
+            // checkBoxRepeat
+            // 
+            this.checkBoxRepeat.AutoSize = true;
+            this.checkBoxRepeat.Location = new System.Drawing.Point(783, 421);
+            this.checkBoxRepeat.Name = "checkBoxRepeat";
+            this.checkBoxRepeat.Size = new System.Drawing.Size(121, 21);
+            this.checkBoxRepeat.TabIndex = 17;
+            this.checkBoxRepeat.Text = "Repetir Nodos";
+            this.checkBoxRepeat.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 750);
+            this.Controls.Add(this.checkBoxRepeat);
             this.Controls.Add(this.checkBoxAStar);
             this.Controls.Add(this.checkBoxBacktracking);
             this.Controls.Add(this.ButtonTree);
@@ -257,6 +269,7 @@
         private System.Windows.Forms.Button ButtonTree;
         private System.Windows.Forms.CheckBox checkBoxBacktracking;
         private System.Windows.Forms.CheckBox checkBoxAStar;
+        private System.Windows.Forms.CheckBox checkBoxRepeat;
     }
 }
 

@@ -40,8 +40,6 @@
             this.buttonDown = new System.Windows.Forms.Button();
             this.listBoxExpantionOrder = new System.Windows.Forms.ListBox();
             this.labelExpantionOrder = new System.Windows.Forms.Label();
-            this.checkBoxRepeat = new System.Windows.Forms.CheckBox();
-            this.labelRepeat = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharacter)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,35 +171,11 @@
             this.labelExpantionOrder.TabIndex = 29;
             this.labelExpantionOrder.Text = "Orden de expansión:";
             // 
-            // checkBoxRepeat
-            // 
-            this.checkBoxRepeat.AutoSize = true;
-            this.checkBoxRepeat.Location = new System.Drawing.Point(604, 249);
-            this.checkBoxRepeat.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBoxRepeat.Name = "checkBoxRepeat";
-            this.checkBoxRepeat.Size = new System.Drawing.Size(48, 21);
-            this.checkBoxRepeat.TabIndex = 30;
-            this.checkBoxRepeat.Text = "No";
-            this.checkBoxRepeat.UseVisualStyleBackColor = true;
-            this.checkBoxRepeat.CheckedChanged += new System.EventHandler(this.checkBoxRepeat_CheckedChanged);
-            // 
-            // labelRepeat
-            // 
-            this.labelRepeat.AutoSize = true;
-            this.labelRepeat.Location = new System.Drawing.Point(488, 251);
-            this.labelRepeat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelRepeat.Name = "labelRepeat";
-            this.labelRepeat.Size = new System.Drawing.Size(107, 17);
-            this.labelRepeat.TabIndex = 31;
-            this.labelRepeat.Text = "Repetir Nodos?";
-            // 
             // FormNewCharacter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 423);
-            this.Controls.Add(this.labelRepeat);
-            this.Controls.Add(this.checkBoxRepeat);
             this.Controls.Add(this.labelExpantionOrder);
             this.Controls.Add(this.listBoxExpantionOrder);
             this.Controls.Add(this.buttonDown);
@@ -238,7 +212,5 @@
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.ListBox listBoxExpantionOrder;
         private System.Windows.Forms.Label labelExpantionOrder;
-        private System.Windows.Forms.CheckBox checkBoxRepeat;
-        private System.Windows.Forms.Label labelRepeat;
     }
 }

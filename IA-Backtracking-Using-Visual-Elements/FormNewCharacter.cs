@@ -94,6 +94,7 @@ namespace IA_Backtracking_Using_Visual_Elements
 
                 idCostList.Add(idCost);
 
+
                 if (ListBoxTerrain.SelectedIndex == last)
                 {
                     character.characterImg = pictureBoxCharacter.Image;
@@ -182,7 +183,6 @@ namespace IA_Backtracking_Using_Visual_Elements
         public Character GetCharacter { get { return character; } }
         public bool GetisCreated { get { return isCreated; } }
         public List<int> GetExpantionOrder { get { return expantionOrder; } }
-        public bool GetRepeat { get { return checkBoxRepeat.Checked; } }
 
         private void buttonSubir_Click(object sender, EventArgs e)
         {
@@ -221,18 +221,6 @@ namespace IA_Backtracking_Using_Visual_Elements
                 int index = listBoxExpantionOrder.SelectedIndex;
                 updateExpantionOrder();
                 listBoxExpantionOrder.SelectedIndex = index + 1;
-            }
-        }
-
-        private void checkBoxRepeat_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxRepeat.Checked)
-            {
-                checkBoxRepeat.Text = "Sí";
-            }
-            else
-            {
-                checkBoxRepeat.Text = "No";
             }
         }
     }
