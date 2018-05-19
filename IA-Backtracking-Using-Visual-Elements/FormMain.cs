@@ -581,24 +581,12 @@ namespace IA_Backtracking_Using_Visual_Elements
         }
 
         // ALGORITMO DE BACKTRACKING OMFG YEAH!!! :3 <3
+
+        
+
         public void backtracking()
         {
-            // 1.- Elegir un orden de expansion
-            // expantionOrderList
-
-            // 2.- Inserto el nodo inicial en la pila
-
-            // 3.- Voy al ultimo elemento de la pila
-
-            // 4.- Si es mi nodo final entonces termino
-
-            // 5.- Si no es mi nodo final y aun tiene hijos que no han sido expandidos
-            // Expando uno de los hijos del nodo actual
-            // Lo meto en la pila en el orden de expansion
-
-            // 6.- Si no es mi nodo final y ya no tiene hijos entonces
-            // marco como cerrado el nodo actual 
-            // lo saco de la pila y lo meto a una lista de nodos cerrados
+            
         }
     }
 }
