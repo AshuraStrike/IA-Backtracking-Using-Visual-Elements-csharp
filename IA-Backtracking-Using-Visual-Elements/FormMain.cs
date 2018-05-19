@@ -297,93 +297,159 @@ namespace IA_Backtracking_Using_Visual_Elements
             }
         }
 
+        public void CheckFinish()
+        {
+            if (character.coordinateX == finalXY.X && character.coordinateY == finalXY.Y && playing)
+            {
+                MessageBox.Show("Llegaste al punto final", "Finished!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                buttonPlay.PerformClick();
+            }
+        }
+
+        private bool MoveCharacterLeft()
+        {
+            bool moved = false;
+            //Revisa la lista del personaje
+            for (int i = 0; i < character.idCostList.Count; i++)
+            {
+                //Si encuentra el id
+                if ((character.coordinateX - 1) > -1 && character.idCostList[i].id == mapa[character.coordinateY][character.coordinateX - 1].TerrainId)
+                {
+                    // y este no es N/A
+                    if (character.idCostList[i].cost > -1)
+                    {
+                        if (character.coordinateX > 0) character.coordinateX -= 1;
+                        moved = true;
+                    }
+                    break;
+                }
+            }
+
+            if (moved)
+            {
+                character.currentStep++;
+                mapa[character.coordinateY][character.coordinateX].listSteps.Add(character.currentStep);
+                unveilKnown();
+                panelMap.Refresh();
+            }
+
+            CheckFinish();
+
+            return moved;
+        }
+        private bool MoveCharacterRight()
+        {
+            bool moved = false;
+            //Revisa la lista del personaje
+            for (int i = 0; i < character.idCostList.Count; i++)
+            {
+                //Si encuentra el id
+                if ((character.coordinateX + 1) < mapa[0].Count && character.idCostList[i].id == mapa[character.coordinateY][character.coordinateX + 1].TerrainId)
+                {
+                    // y este no es N/A
+                    if (character.idCostList[i].cost > -1)
+                    {
+                        if (character.coordinateX < mapa[0].Count - 1) character.coordinateX += 1;
+                        moved = true;
+                    }
+                    break;
+                }
+            }
+
+            if (moved)
+            {
+                character.currentStep++;
+                mapa[character.coordinateY][character.coordinateX].listSteps.Add(character.currentStep);
+                unveilKnown();
+                panelMap.Refresh();
+            }
+
+            CheckFinish();
+
+            return moved;
+        }
+        private bool MoveCharacterUp()
+        {
+            bool moved = false;
+            //Revisa la lista del personaje
+            for (int i = 0; i < character.idCostList.Count; i++)
+            {
+                //Si encuentra el id
+                if ((character.coordinateY - 1) > -1 && character.idCostList[i].id == mapa[character.coordinateY - 1][character.coordinateX].TerrainId)
+                {
+                    // y este no es N/A
+                    if (character.idCostList[i].cost > -1)
+                    {
+                        if (character.coordinateY > 0) character.coordinateY -= 1;
+                        moved = true;
+                    }
+                    break;
+                }
+            }
+
+            if (moved)
+            {
+                character.currentStep++;
+                mapa[character.coordinateY][character.coordinateX].listSteps.Add(character.currentStep);
+                unveilKnown();
+                panelMap.Refresh();
+            }
+
+            CheckFinish();
+
+            return moved;
+        }
+        private bool MoveCharacterDown()
+        {
+            bool moved = false;
+            //Revisa la lista del personaje
+            for (int i = 0; i < character.idCostList.Count; i++)
+            {
+                //Si encuentra el id
+                if ((character.coordinateY + 1) < mapa.Count && character.idCostList[i].id == mapa[character.coordinateY + 1][character.coordinateX].TerrainId)
+                {
+                    // y este no es N/A
+                    if (character.idCostList[i].cost > -1)
+                    {
+                        if (character.coordinateY < mapa.Count - 1) character.coordinateY += 1;
+                        moved = true;
+                    }
+                    break;
+                }
+            }
+
+            if (moved)
+            {
+                character.currentStep++;
+                mapa[character.coordinateY][character.coordinateX].listSteps.Add(character.currentStep);
+                unveilKnown();
+                panelMap.Refresh();
+            }
+
+            CheckFinish();
+
+            return moved;
+        }
+
+
         private void FormMain_KeyDown(object sender, KeyEventArgs e)
         {
             if (character != null)
             {
-                bool moved = false;
                 switch (e.KeyCode)
                 {
                     case Keys.Left:
-                        //Revisa la lista del personaje
-                        for (int i=0;i<character.idCostList.Count;i++)
-                        {
-                            //Si encuentra el id
-                            if ((character.coordinateX - 1)>-1 && character.idCostList[i].id == mapa[character.coordinateY][character.coordinateX-1].TerrainId)
-                            {
-                                // y este no es N/A
-                                if (character.idCostList[i].cost > -1)
-                                {
-                                    if (character.coordinateX > 0) character.coordinateX -= 1;
-                                    moved = true;
-                                }
-                                break;
-                            }
-                        }
+                        MoveCharacterLeft();
                         break;
                     case Keys.Right:
-                        //Revisa la lista del personaje
-                        for (int i = 0; i < character.idCostList.Count; i++)
-                        {
-                            //Si encuentra el id
-                            if ((character.coordinateX + 1) < mapa[0].Count && character.idCostList[i].id == mapa[character.coordinateY][character.coordinateX + 1].TerrainId)
-                            {
-                                // y este no es N/A
-                                if (character.idCostList[i].cost > -1)
-                                {
-                                    if (character.coordinateX < mapa[0].Count - 1) character.coordinateX += 1;
-                                    moved = true;
-                                }
-                                break;
-                            }
-                        }
+                        MoveCharacterRight();
                         break;
                     case Keys.Up:
-                        //Revisa la lista del personaje
-                        for (int i = 0; i < character.idCostList.Count; i++)
-                        {
-                            //Si encuentra el id
-                            if ((character.coordinateY - 1) > -1 && character.idCostList[i].id == mapa[character.coordinateY - 1][character.coordinateX].TerrainId)
-                            {
-                                // y este no es N/A
-                                if (character.idCostList[i].cost > -1)
-                                {
-                                    if (character.coordinateY > 0) character.coordinateY -= 1;
-                                    moved = true;
-                                }
-                                break;
-                            }
-                        }
+                        MoveCharacterUp();
                         break;
                     case Keys.Down:
-                        //Revisa la lista del personaje
-                        for (int i = 0; i < character.idCostList.Count; i++)
-                        {
-                            //Si encuentra el id
-                            if ((character.coordinateY + 1) < mapa.Count && character.idCostList[i].id == mapa[character.coordinateY + 1][character.coordinateX].TerrainId)
-                            {
-                                // y este no es N/A
-                                if (character.idCostList[i].cost > -1)
-                                {
-                                    if (character.coordinateY < mapa.Count - 1) character.coordinateY += 1;
-                                    moved = true;
-                                }
-                                break;
-                            }
-                        }
+                        MoveCharacterDown();
                         break;
-                }
-                if (moved)
-                {
-                    character.currentStep++;
-                    mapa[character.coordinateY][character.coordinateX].listSteps.Add(character.currentStep);
-                    unveilKnown();
-                    panelMap.Refresh();
-                }
-                if(character.coordinateX == finalXY.X && character.coordinateY == finalXY.Y)
-                {
-                    MessageBox.Show("Llegaste al punto final","Finished!",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    buttonPlay.PerformClick();
                 }
             }
         }
@@ -582,7 +648,10 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         // ALGORITMO DE BACKTRACKING OMFG YEAH!!! :3 <3
 
-        
+        public void AStar()
+        {
+
+        }
 
         public void backtracking()
         {

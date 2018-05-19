@@ -35,8 +35,7 @@ namespace IA_Backtracking_Using_Visual_Elements
             //Extract info root
             char a = 'A';
             a += (char) tree.root.posX;
-            treeView.Nodes.Add("Padre: N/A" + "\n" +
-                    "Posicion: " + a + "," + (tree.root.posY + 1) + "\n" +
+            treeView.Nodes.Add(a + "," + (tree.root.posY + 1) + "\n" +
                     " Numero de hijos: " + tree.root.numberOfChilds + '\n' +
                     " Visitas: " + visits);
             tree.print(ref treeView);
