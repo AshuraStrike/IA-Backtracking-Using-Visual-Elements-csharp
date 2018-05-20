@@ -260,6 +260,30 @@ namespace IA_Backtracking_Using_Visual_Elements
                 character.coordinateY = initXY.Y;
                 mapa[character.coordinateY][character.coordinateX].listSteps.Add(character.currentStep);
                 unveilKnown();
+
+                if(checkBoxBacktracking.Checked == true)
+                {
+                    if(checkBoxRepeat.Checked == true)
+                    {
+                        ///Bactracking Repeat
+                    }
+                    else
+                    {
+                        ///Backtracking no repeat
+                    }
+                }
+                else if(checkBoxAStar.Checked == true)
+                {
+                    if (checkBoxRepeat.Checked == true)
+                    {
+                        //AStar Repeat
+                    }
+                    else
+                    {
+                        //AStar no repeat
+                    }
+                }
+
             }
             else if(playing && character != null)
             {   //Dejar de jugar
@@ -299,6 +323,10 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         public void CheckFinish()
         {
+            double manhattan = Math.Sqrt(Math.Pow(finalXY.X - character.coordinateX,2)+Math.Pow(finalXY.Y - character.coordinateY, 2));
+
+            System.Diagnostics.Debug.WriteLine("Manhattan: "+manhattan);
+
             if (character.coordinateX == finalXY.X && character.coordinateY == finalXY.Y && playing)
             {
                 MessageBox.Show("Llegaste al punto final", "Finished!", MessageBoxButtons.OK, MessageBoxIcon.Information);
