@@ -39,7 +39,7 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         List<Move> moveList;
 
-        List<int> expantionOrderList;
+        List<int> expantionOrder;
 
         Brush alphaGreenBrush;
         Brush alphaOrangeBrush;
@@ -57,6 +57,8 @@ namespace IA_Backtracking_Using_Visual_Elements
             checkBoxAStar.Enabled = false;
             checkBoxRepeat.Enabled = false;
             buttonPlay.Enabled = false;
+            buttonUp.Enabled = false;
+            buttonDown.Enabled = false;
 
             // Inicializa el mapa donde irán las celdas
             mapa = new Map();
@@ -81,7 +83,14 @@ namespace IA_Backtracking_Using_Visual_Elements
 
             formGraphics = this.CreateGraphics();
 
-            expantionOrderList = new List<int>();
+            expantionOrder = new List<int>();
+            expantionOrder.Add(0);
+            expantionOrder.Add(1);
+            expantionOrder.Add(2);
+            expantionOrder.Add(3);
+            updateExpantionOrder();
+
+            listBoxExpantionOrder.SelectedIndex = 0;
         }
 
         private void buttonExamine_Click(object sender, EventArgs e)
@@ -252,6 +261,9 @@ namespace IA_Backtracking_Using_Visual_Elements
                 GroundButton.Enabled = false;
                 buttonCharacter.Enabled = false;
                 buttonFinalCoord.Enabled = false;
+                buttonUp.Enabled = false;
+                buttonDown.Enabled = false;
+
                 ButtonTree.Enabled = true;
                 playing = !playing;
 
@@ -293,6 +305,8 @@ namespace IA_Backtracking_Using_Visual_Elements
                 GroundButton.Enabled = true;
                 buttonCharacter.Enabled = true;
                 buttonFinalCoord.Enabled = true;
+                buttonUp.Enabled = true;
+                buttonDown.Enabled = true;
                 playing = !playing;
             }
             if(character == null)
@@ -488,7 +502,6 @@ namespace IA_Backtracking_Using_Visual_Elements
             {
                 FormNewCharacter NewCharacterWindow = new FormNewCharacter(ref noRepeat);
                 NewCharacterWindow.ShowDialog();
-                expantionOrderList = NewCharacterWindow.GetExpantionOrder;
 
                 isCreated = NewCharacterWindow.GetisCreated;
                 if(isCreated)
@@ -498,6 +511,10 @@ namespace IA_Backtracking_Using_Visual_Elements
                     buttonCharacter.Enabled = true;
                     buttonFinalCoord.Enabled = true;
                     buttonInitialCord.Enabled = true;
+
+                    buttonUp.Enabled = true;
+                    buttonDown.Enabled = true;
+                    
                     panelMap.Refresh();
                 }
                 else
@@ -684,6 +701,72 @@ namespace IA_Backtracking_Using_Visual_Elements
         public void backtracking()
         {
             
+        }
+
+        private void buttonUp_Click(object sender, EventArgs e)
+        {
+            if (listBoxExpantionOrder.SelectedIndex != 0)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    if (expantionOrder[i] == expantionOrder[listBoxExpantionOrder.SelectedIndex])
+                    {
+                        int tmp = expantionOrder[i - 1];
+                        expantionOrder[i - 1] = expantionOrder[i];
+                        expantionOrder[i] = tmp;
+                        break;
+                    }
+                }
+                int index = listBoxExpantionOrder.SelectedIndex;
+                updateExpantionOrder();
+                listBoxExpantionOrder.SelectedIndex = index - 1;
+            }
+        }
+
+        private void buttonDown_Click(object sender, EventArgs e)
+        {
+            if (listBoxExpantionOrder.SelectedIndex != 3)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    if (expantionOrder[i] == expantionOrder[listBoxExpantionOrder.SelectedIndex])
+                    {
+                        int tmp = expantionOrder[i + 1];
+                        expantionOrder[i + 1] = expantionOrder[i];
+                        expantionOrder[i] = tmp;
+                        break;
+                    }
+                }
+                int index = listBoxExpantionOrder.SelectedIndex;
+                updateExpantionOrder();
+                listBoxExpantionOrder.SelectedIndex = index + 1;
+            }
+        }
+
+        public void updateExpantionOrder()
+        {
+            listBoxExpantionOrder.Items.Clear();
+            string text = "";
+
+            for (int i = 0; i < 4; i++)
+            {
+                switch (expantionOrder[i])
+                {
+                    case 0:
+                        text = "Arriba";
+                        break;
+                    case 1:
+                        text = "Abajo";
+                        break;
+                    case 2:
+                        text = "Izquierda";
+                        break;
+                    case 3:
+                        text = "Derecha";
+                        break;
+                }
+                listBoxExpantionOrder.Items.Add(text);
+            }
         }
     }
 }
