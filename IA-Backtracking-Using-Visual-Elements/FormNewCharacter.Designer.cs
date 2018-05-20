@@ -36,7 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CheckBoxNA = new System.Windows.Forms.CheckBox();
             this.pictureBoxCharacter = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharacter)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,22 +125,12 @@
             this.pictureBoxCharacter.TabIndex = 15;
             this.pictureBoxCharacter.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(192, 101);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // FormNewCharacter
             // 
             this.AcceptButton = this.ButtonNext;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 344);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.CheckBoxNA);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ComboBoxImage);
@@ -170,6 +159,5 @@
         private System.Windows.Forms.ComboBox ComboBoxImage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox CheckBoxNA;
-        private System.Windows.Forms.Button button1;
     }
 }
