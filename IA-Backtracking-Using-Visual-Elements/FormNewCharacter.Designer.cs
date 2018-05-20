@@ -36,10 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CheckBoxNA = new System.Windows.Forms.CheckBox();
             this.pictureBoxCharacter = new System.Windows.Forms.PictureBox();
-            this.buttonUp = new System.Windows.Forms.Button();
-            this.buttonDown = new System.Windows.Forms.Button();
-            this.listBoxExpantionOrder = new System.Windows.Forms.ListBox();
-            this.labelExpantionOrder = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharacter)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +44,7 @@
             // 
             this.ListBoxTerrain.FormattingEnabled = true;
             this.ListBoxTerrain.Location = new System.Drawing.Point(10, 152);
-            this.ListBoxTerrain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ListBoxTerrain.Margin = new System.Windows.Forms.Padding(2);
             this.ListBoxTerrain.Name = "ListBoxTerrain";
             this.ListBoxTerrain.Size = new System.Drawing.Size(116, 173);
             this.ListBoxTerrain.TabIndex = 16;
@@ -65,7 +62,7 @@
             // textBoxCost
             // 
             this.textBoxCost.Location = new System.Drawing.Point(157, 191);
-            this.textBoxCost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxCost.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCost.Name = "textBoxCost";
             this.textBoxCost.Size = new System.Drawing.Size(100, 20);
             this.textBoxCost.TabIndex = 19;
@@ -74,7 +71,7 @@
             // ButtonNext
             // 
             this.ButtonNext.Location = new System.Drawing.Point(238, 258);
-            this.ButtonNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonNext.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNext.Name = "ButtonNext";
             this.ButtonNext.Size = new System.Drawing.Size(71, 42);
             this.ButtonNext.TabIndex = 20;
@@ -92,7 +89,7 @@
             "Pez",
             "Lobo"});
             this.ComboBoxImage.Location = new System.Drawing.Point(157, 42);
-            this.ComboBoxImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ComboBoxImage.Margin = new System.Windows.Forms.Padding(2);
             this.ComboBoxImage.Name = "ComboBoxImage";
             this.ComboBoxImage.Size = new System.Drawing.Size(92, 21);
             this.ComboBoxImage.TabIndex = 22;
@@ -112,7 +109,7 @@
             // 
             this.CheckBoxNA.AutoSize = true;
             this.CheckBoxNA.Location = new System.Drawing.Point(157, 214);
-            this.CheckBoxNA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CheckBoxNA.Margin = new System.Windows.Forms.Padding(2);
             this.CheckBoxNA.Name = "CheckBoxNA";
             this.CheckBoxNA.Size = new System.Drawing.Size(46, 17);
             this.CheckBoxNA.TabIndex = 24;
@@ -129,53 +126,22 @@
             this.pictureBoxCharacter.TabIndex = 15;
             this.pictureBoxCharacter.TabStop = false;
             // 
-            // buttonUp
+            // button1
             // 
-            this.buttonUp.Location = new System.Drawing.Point(486, 85);
-            this.buttonUp.Name = "buttonUp";
-            this.buttonUp.Size = new System.Drawing.Size(40, 23);
-            this.buttonUp.TabIndex = 26;
-            this.buttonUp.Text = "Subir";
-            this.buttonUp.UseVisualStyleBackColor = true;
-            this.buttonUp.Click += new System.EventHandler(this.buttonSubir_Click);
-            // 
-            // buttonDown
-            // 
-            this.buttonDown.Location = new System.Drawing.Point(486, 114);
-            this.buttonDown.Name = "buttonDown";
-            this.buttonDown.Size = new System.Drawing.Size(40, 23);
-            this.buttonDown.TabIndex = 27;
-            this.buttonDown.Text = "Bajar";
-            this.buttonDown.UseVisualStyleBackColor = true;
-            this.buttonDown.Click += new System.EventHandler(this.buttonBajar_Click);
-            // 
-            // listBoxExpantionOrder
-            // 
-            this.listBoxExpantionOrder.FormattingEnabled = true;
-            this.listBoxExpantionOrder.Location = new System.Drawing.Point(368, 31);
-            this.listBoxExpantionOrder.Name = "listBoxExpantionOrder";
-            this.listBoxExpantionOrder.Size = new System.Drawing.Size(112, 108);
-            this.listBoxExpantionOrder.TabIndex = 28;
-            // 
-            // labelExpantionOrder
-            // 
-            this.labelExpantionOrder.AutoSize = true;
-            this.labelExpantionOrder.Location = new System.Drawing.Point(365, 15);
-            this.labelExpantionOrder.Name = "labelExpantionOrder";
-            this.labelExpantionOrder.Size = new System.Drawing.Size(105, 13);
-            this.labelExpantionOrder.TabIndex = 29;
-            this.labelExpantionOrder.Text = "Orden de expansión:";
+            this.button1.Location = new System.Drawing.Point(192, 101);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FormNewCharacter
             // 
             this.AcceptButton = this.ButtonNext;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 344);
-            this.Controls.Add(this.labelExpantionOrder);
-            this.Controls.Add(this.listBoxExpantionOrder);
-            this.Controls.Add(this.buttonDown);
-            this.Controls.Add(this.buttonUp);
+            this.ClientSize = new System.Drawing.Size(328, 344);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.CheckBoxNA);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ComboBoxImage);
@@ -184,7 +150,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ListBoxTerrain);
             this.Controls.Add(this.pictureBoxCharacter);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormNewCharacter";
             this.Text = "Crear Personaje";
             this.Load += new System.EventHandler(this.FormNewCharacter_Load);
@@ -204,9 +170,6 @@
         private System.Windows.Forms.ComboBox ComboBoxImage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox CheckBoxNA;
-        private System.Windows.Forms.Button buttonUp;
-        private System.Windows.Forms.Button buttonDown;
-        private System.Windows.Forms.ListBox listBoxExpantionOrder;
-        private System.Windows.Forms.Label labelExpantionOrder;
+        private System.Windows.Forms.Button button1;
     }
 }

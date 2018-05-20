@@ -293,6 +293,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                     else
                     {
                         //AStar no repeat
+
                     }
                 }
 

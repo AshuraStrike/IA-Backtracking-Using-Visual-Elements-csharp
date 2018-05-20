@@ -21,8 +21,6 @@ namespace IA_Backtracking_Using_Visual_Elements
         int last;
         bool isCreated;
 
-        List<int> expantionOrder;
-
         public FormNewCharacter(ref List<Cell> noRepeat)
         {
             InitializeComponent();
@@ -35,12 +33,6 @@ namespace IA_Backtracking_Using_Visual_Elements
             isCreated = false;
 
             ComboBoxImage.SelectedIndex = 0;
-
-            expantionOrder = new List<int>();
-            expantionOrder.Add(0);
-            expantionOrder.Add(1);
-            expantionOrder.Add(2);
-            expantionOrder.Add(3);
         }
 
         //solo recibir numeros en el textbox
@@ -72,9 +64,6 @@ namespace IA_Backtracking_Using_Visual_Elements
             ListBoxTerrain.SetSelected(0, true);
             last = ListBoxTerrain.Items.Count - 1;
 
-            updateExpantionOrder();
-
-            listBoxExpantionOrder.SelectedIndex = 0;
         }
 
         private void ButtonNext_Click(object sender, EventArgs e)
@@ -155,73 +144,8 @@ namespace IA_Backtracking_Using_Visual_Elements
             }
         }
 
-        public void updateExpantionOrder()
-        {
-            listBoxExpantionOrder.Items.Clear();
-            string text = "";
-
-            for (int i = 0; i < 4; i++)
-            {
-                switch (expantionOrder[i])
-                {
-                    case 0:
-                        text = "Arriba";
-                        break;
-                    case 1:
-                        text = "Abajo";
-                        break;
-                    case 2:
-                        text = "Izquierda";
-                        break;
-                    case 3:
-                        text = "Derecha";
-                        break;
-                }
-                listBoxExpantionOrder.Items.Add(text);
-            }
-        }
         public Character GetCharacter { get { return character; } }
         public bool GetisCreated { get { return isCreated; } }
-        public List<int> GetExpantionOrder { get { return expantionOrder; } }
 
-        private void buttonSubir_Click(object sender, EventArgs e)
-        {
-            if (listBoxExpantionOrder.SelectedIndex != 0)
-            {
-                for (int i = 0; i < 4; i++)
-                {
-                    if (expantionOrder[i] == expantionOrder[listBoxExpantionOrder.SelectedIndex])
-                    {
-                        int tmp = expantionOrder[i - 1];
-                        expantionOrder[i - 1] = expantionOrder[i];
-                        expantionOrder[i] = tmp;
-                        break;
-                    }
-                }
-                int index = listBoxExpantionOrder.SelectedIndex;
-                updateExpantionOrder();
-                listBoxExpantionOrder.SelectedIndex = index -1;
-            }
-        }
-
-        private void buttonBajar_Click(object sender, EventArgs e)
-        {
-            if (listBoxExpantionOrder.SelectedIndex != 3)
-            {
-                for (int i = 0; i < 4; i++)
-                {
-                    if (expantionOrder[i] == expantionOrder[listBoxExpantionOrder.SelectedIndex])
-                    {
-                        int tmp = expantionOrder[i + 1];
-                        expantionOrder[i + 1] = expantionOrder[i];
-                        expantionOrder[i] = tmp;
-                        break;
-                    }
-                }
-                int index = listBoxExpantionOrder.SelectedIndex;
-                updateExpantionOrder();
-                listBoxExpantionOrder.SelectedIndex = index + 1;
-            }
-        }
     }
 }
