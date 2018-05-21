@@ -47,6 +47,8 @@
             this.listBoxExpantionOrder = new System.Windows.Forms.ListBox();
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
+            this.labelResoult = new System.Windows.Forms.Label();
+            this.labelSteps = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panelMap
@@ -254,11 +256,31 @@
             this.buttonUp.UseVisualStyleBackColor = true;
             this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
             // 
+            // labelResoult
+            // 
+            this.labelResoult.AutoSize = true;
+            this.labelResoult.Location = new System.Drawing.Point(41, 568);
+            this.labelResoult.Name = "labelResoult";
+            this.labelResoult.Size = new System.Drawing.Size(58, 13);
+            this.labelResoult.TabIndex = 34;
+            this.labelResoult.Text = "Resultado:";
+            // 
+            // labelSteps
+            // 
+            this.labelSteps.AutoSize = true;
+            this.labelSteps.Location = new System.Drawing.Point(105, 568);
+            this.labelSteps.Name = "labelSteps";
+            this.labelSteps.Size = new System.Drawing.Size(34, 13);
+            this.labelSteps.TabIndex = 35;
+            this.labelSteps.Text = "Steps";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 609);
+            this.Controls.Add(this.labelSteps);
+            this.Controls.Add(this.labelResoult);
             this.Controls.Add(this.labelExpantionOrder);
             this.Controls.Add(this.listBoxExpantionOrder);
             this.Controls.Add(this.buttonDown);
@@ -312,6 +334,8 @@
         private System.Windows.Forms.ListBox listBoxExpantionOrder;
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonUp;
+        private System.Windows.Forms.Label labelResoult;
+        private System.Windows.Forms.Label labelSteps;
     }
 }
 

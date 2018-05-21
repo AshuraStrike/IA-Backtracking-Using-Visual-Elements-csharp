@@ -47,11 +47,14 @@ namespace IA_Backtracking_Using_Visual_Elements
         List<Point> visitedBT;
         List<Point> routeBT;
 
+        int slp = 500;
+
         public FormMain()
         {
             InitializeComponent();
             KeyPreview = true;
             labelRoute.Text = "";
+            labelSteps.Text = "";
             panelMap.Width = 0;
             panelMap.Height = 0;
 
@@ -257,7 +260,7 @@ namespace IA_Backtracking_Using_Visual_Elements
 
             for (int i = 0; i < expantionOrder.Count; i++)
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(slp);
                 bool moved = false;
                 listBoxExpantionOrder.SelectedIndex = i;
                 switch (expantionOrder[i])
@@ -266,11 +269,15 @@ namespace IA_Backtracking_Using_Visual_Elements
                         if (!visitedBT.Contains(new Point(character.coordinateX, character.coordinateY - 1)))
                         {
                             moved = MoveCharacterUp();
-                            if (moved && playing)
+                            if (moved)
                             {
                                 doBackTrack();
+                            }
+                            if (moved && playing)
+                            {
                                 MoveCharacterDown();
                                 routeBT.Remove(routeBT[routeBT.Count-1]);
+                                Thread.Sleep(slp);
                             }
                         }
                         break;
@@ -278,11 +285,15 @@ namespace IA_Backtracking_Using_Visual_Elements
                         if (!visitedBT.Contains(new Point(character.coordinateX, character.coordinateY + 1)))
                         {
                             moved = MoveCharacterDown();
-                            if (moved && playing)
+                            if (moved)
                             {
                                 doBackTrack();
+                            }
+                            if (moved && playing)
+                            {
                                 MoveCharacterUp();
                                 routeBT.Remove(routeBT[routeBT.Count - 1]);
+                                Thread.Sleep(slp);
                             }
                         }
                         break;
@@ -290,11 +301,15 @@ namespace IA_Backtracking_Using_Visual_Elements
                         if (!visitedBT.Contains(new Point(character.coordinateX - 1, character.coordinateY)))
                         {
                             moved = MoveCharacterLeft();
-                            if (moved && playing)
+                            if (moved)
                             {
                                 doBackTrack();
+                            }
+                            if (moved && playing)
+                            {
                                 MoveCharacterRight();
                                 routeBT.Remove(routeBT[routeBT.Count - 1]);
+                                Thread.Sleep(slp);
                             }
                         }
                         break;
@@ -302,16 +317,20 @@ namespace IA_Backtracking_Using_Visual_Elements
                         if (!visitedBT.Contains(new Point(character.coordinateX + 1, character.coordinateY)))
                         {
                             moved = MoveCharacterRight();
-                            if (moved && playing)
+                            if (moved)
                             {
                                 doBackTrack();
+                            }
+                            if (moved && playing)
+                            {
                                 MoveCharacterLeft();
                                 routeBT.Remove(routeBT[routeBT.Count - 1]);
+                                Thread.Sleep(slp);
                             }
                         }
                         break;
                 }
-                Thread.Sleep(1000);
+                if (!playing) break;
             }
         }
 
@@ -338,20 +357,23 @@ namespace IA_Backtracking_Using_Visual_Elements
                 character.coordinateY = initXY.Y;
                 mapa[character.coordinateY][character.coordinateX].listSteps.Add(character.currentStep);
                 unveilKnown();
+                panelMap.Refresh();
 
                 if(checkBoxBacktracking.Checked == true)
                 {
-                    if (checkBoxRepeat.Checked == true)
+                    visitedBT = new List<Point>();
+                    routeBT = new List<Point>();
+                    //Backtracking
+                    doBackTrack();
+                    string result = "";
+                    for(int i = 0; i < routeBT.Count; i++)
                     {
-                        ///Bactracking Repeat
+                        char c = 'A';
+                        c += (char)routeBT[i].X;
+                        result += c.ToString() + "," + (routeBT[i].Y + 1);
+                        if (i < routeBT.Count - 1) result += " -> ";
                     }
-                    else
-                    {
-                        visitedBT = new List<Point>();
-                        routeBT = new List<Point>();
-                        //Backtracking no repeat
-                        doBackTrack();
-                    }
+                    labelSteps.Text = result;
                 }
                 else if(checkBoxAStar.Checked == true)
                 {
@@ -496,7 +518,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                                     MoveCharacterRight();
                                     break;
                             }
-                            Thread.Sleep(1000);
+                            Thread.Sleep(slp);
                         }
                     }
                 }
