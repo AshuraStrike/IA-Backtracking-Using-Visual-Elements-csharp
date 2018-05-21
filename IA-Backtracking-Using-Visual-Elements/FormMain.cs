@@ -555,6 +555,9 @@ namespace IA_Backtracking_Using_Visual_Elements
                 buttonUp.Enabled = true;
                 buttonDown.Enabled = true;
                 playing = !playing;
+
+                FormTreeView TreeWindow = new FormTreeView(ref moveList);
+                TreeWindow.ShowDialog();
             }
             if(character == null)
             {
