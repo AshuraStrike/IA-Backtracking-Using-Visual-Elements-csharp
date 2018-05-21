@@ -44,6 +44,9 @@ namespace IA_Backtracking_Using_Visual_Elements
         Brush alphaGreenBrush;
         Brush alphaOrangeBrush;
 
+        List<Point> visitedBT;
+        List<Point> routeBT;
+
         public FormMain()
         {
             InitializeComponent();
@@ -247,7 +250,70 @@ namespace IA_Backtracking_Using_Visual_Elements
             graphics.DrawImage(character.characterImg, character.coordinateX * CELL_WIDTH, character.coordinateY * CELL_WIDTH);
         }
 
-        
+        public void doBackTrack()
+        {
+            visitedBT.Add(new Point(character.coordinateX, character.coordinateY));
+            routeBT.Add(new Point(character.coordinateX, character.coordinateY));
+
+            for (int i = 0; i < expantionOrder.Count; i++)
+            {
+                Thread.Sleep(1000);
+                bool moved = false;
+                listBoxExpantionOrder.SelectedIndex = i;
+                switch (expantionOrder[i])
+                {
+                    case 0:
+                        if (!visitedBT.Contains(new Point(character.coordinateX, character.coordinateY - 1)))
+                        {
+                            moved = MoveCharacterUp();
+                            if (moved && playing)
+                            {
+                                doBackTrack();
+                                MoveCharacterDown();
+                                routeBT.Remove(routeBT[routeBT.Count-1]);
+                            }
+                        }
+                        break;
+                    case 1:
+                        if (!visitedBT.Contains(new Point(character.coordinateX, character.coordinateY + 1)))
+                        {
+                            moved = MoveCharacterDown();
+                            if (moved && playing)
+                            {
+                                doBackTrack();
+                                MoveCharacterUp();
+                                routeBT.Remove(routeBT[routeBT.Count - 1]);
+                            }
+                        }
+                        break;
+                    case 2:
+                        if (!visitedBT.Contains(new Point(character.coordinateX - 1, character.coordinateY)))
+                        {
+                            moved = MoveCharacterLeft();
+                            if (moved && playing)
+                            {
+                                doBackTrack();
+                                MoveCharacterRight();
+                                routeBT.Remove(routeBT[routeBT.Count - 1]);
+                            }
+                        }
+                        break;
+                    case 3:
+                        if (!visitedBT.Contains(new Point(character.coordinateX + 1, character.coordinateY)))
+                        {
+                            moved = MoveCharacterRight();
+                            if (moved && playing)
+                            {
+                                doBackTrack();
+                                MoveCharacterLeft();
+                                routeBT.Remove(routeBT[routeBT.Count - 1]);
+                            }
+                        }
+                        break;
+                }
+                Thread.Sleep(1000);
+            }
+        }
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
@@ -275,13 +341,16 @@ namespace IA_Backtracking_Using_Visual_Elements
 
                 if(checkBoxBacktracking.Checked == true)
                 {
-                    if(checkBoxRepeat.Checked == true)
+                    if (checkBoxRepeat.Checked == true)
                     {
                         ///Bactracking Repeat
                     }
                     else
                     {
-                        ///Backtracking no repeat
+                        visitedBT = new List<Point>();
+                        routeBT = new List<Point>();
+                        //Backtracking no repeat
+                        doBackTrack();
                     }
                 }
                 else if(checkBoxAStar.Checked == true)
