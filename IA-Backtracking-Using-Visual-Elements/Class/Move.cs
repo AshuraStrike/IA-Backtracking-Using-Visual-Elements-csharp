@@ -12,6 +12,7 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
         public int coordY;
         public int childNumber;
         public int currentStep;
+        public bool visited;
 
         public Move(int coordX, int coordY, int childNumber, int currentStep)
         {
@@ -19,6 +20,16 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
             this.coordY = coordY;
             this.childNumber = childNumber;
             this.currentStep = currentStep;
+            visited = true;
+        }
+
+        public Move(int coordX, int coordY, int childNumber)
+        {
+            this.coordX = coordX;
+            this.coordY = coordY;
+            this.childNumber = childNumber;
+            this.currentStep = -1;
+            visited = true;
         }
     }
 }

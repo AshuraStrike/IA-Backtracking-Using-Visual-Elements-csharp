@@ -31,6 +31,22 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
             this.numberOfChilds = numberOfChilds;
         }
 
+        public string visits()
+        {
+            string visits = "";
+            for (int i = 0; i < this.visitList.Count; i++)
+            {
+                if (this.visitList[i] > 0)
+                {
+                    visits += this.visitList[i].ToString() + ", ";
+                }
+            }
+
+            if (visits == "") visits = "Expandido";
+
+            return visits;
+        }
+
         public bool isOpen()
         {
             bool founded = false;
@@ -146,18 +162,12 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
         {
             if (node != null)
             {
-                string visits = "";
-                for(int i = 0; i < node.visitList.Count; i++)
-                {
-                    visits += node.visitList[i].ToString()+", ";
-                }
-
                 //Extract info
                 char a = 'A';
                 a += (char) node.posX;
                 parentNode = parentNode.Nodes.Add(a+","+(node.posY+1)+"\n"+
                     " Numero de hijos: "+node.numberOfChilds+'\n'+
-                    " Visitas: "+visits);
+                    " Visitas: "+node.visits());
             }
 
             for (int i = 0; i < node.childList.Count; i++)

@@ -311,6 +311,12 @@ namespace IA_Backtracking_Using_Visual_Elements
                                                 if (character.idCostList[j].cost > -1)
                                                 {
                                                     double manhattan = Math.Sqrt(Math.Pow(finalXY.X - character.coordinateX, 2) + Math.Pow(finalXY.Y - (character.coordinateY-1), 2));
+                                                    int child = 0;
+                                                    child += checkChild(-1, 1);
+                                                    child += checkChild(-1, -1);
+                                                    child += checkChild(0, 0);
+                                                    child += checkChild(-2, 0);
+                                                    moveList.Add(new Move(character.coordinateX, character.coordinateY - 1,child));
                                                     if (minimum == -1)
                                                     {
                                                         minimum = expantionOrder[i];

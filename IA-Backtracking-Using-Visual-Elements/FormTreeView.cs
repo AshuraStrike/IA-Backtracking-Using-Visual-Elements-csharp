@@ -25,19 +25,12 @@ namespace IA_Backtracking_Using_Visual_Elements
         }
 
         private void FormTreeView_Load(object sender, EventArgs e)
-        {
-            string visits = "";
-            for (int i = 0; i < tree.root.visitList.Count; i++)
-            {
-                visits += tree.root.visitList[i].ToString() + ", ";
-            }
-
-            //Extract info root
+        {   //Extract info root
             char a = 'A';
             a += (char) tree.root.posX;
-            treeView.Nodes.Add(a + "," + (tree.root.posY + 1) + "\n" +
-                    " Numero de hijos: " + tree.root.numberOfChilds + '\n' +
-                    " Visitas: " + visits);
+            treeView.Nodes.Add(a + "," + (tree.root.posY + 1) + " " +
+                    " Numero de hijos: " + tree.root.numberOfChilds + " " +
+                    " Visitas: " + tree.root.visits());
             tree.print(ref treeView);
         }
     }
