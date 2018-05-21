@@ -293,7 +293,136 @@ namespace IA_Backtracking_Using_Visual_Elements
                     else
                     {
                         //AStar no repeat
-
+                        while (playing) {
+                            int minimum = -1;
+                            double minFn = -1;
+                            for (int i =0;i<expantionOrder.Count;i++)
+                            {
+                                switch (expantionOrder[i])
+                                {
+                                    //UP
+                                    case 0:
+                                        for (int j = 0; j < character.idCostList.Count; j++)
+                                        {
+                                            //Si encuentra el id
+                                            if ((character.coordinateY - 1) > -1 && character.idCostList[j].id == mapa[character.coordinateY - 1][character.coordinateX].TerrainId)
+                                            {
+                                                // y este no es N/A
+                                                if (character.idCostList[j].cost > -1)
+                                                {
+                                                    double manhattan = Math.Sqrt(Math.Pow(finalXY.X - character.coordinateX, 2) + Math.Pow(finalXY.Y - (character.coordinateY-1), 2));
+                                                    if (minimum == -1)
+                                                    {
+                                                        minimum = expantionOrder[i];
+                                                        minFn = manhattan;
+                                                    }
+                                                    else if (manhattan < minFn)
+                                                    {
+                                                        minimum = expantionOrder[i];
+                                                        minFn = manhattan;
+                                                    }
+                                                }
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                    //DOWN
+                                    case 1:
+                                        for (int j = 0; j < character.idCostList.Count; j++)
+                                        {
+                                            //Si encuentra el id
+                                            if ((character.coordinateY + 1) < mapa.Count && character.idCostList[j].id == mapa[character.coordinateY + 1][character.coordinateX].TerrainId)
+                                            {
+                                                // y este no es N/A
+                                                if (character.idCostList[j].cost > -1)
+                                                {
+                                                    double manhattan = Math.Sqrt(Math.Pow(finalXY.X - character.coordinateX, 2) + Math.Pow(finalXY.Y - (character.coordinateY + 1), 2));
+                                                    if (minimum == -1)
+                                                    {
+                                                        minimum = expantionOrder[i];
+                                                        minFn = manhattan;
+                                                    }
+                                                    else if (manhattan < minFn)
+                                                    {
+                                                        minimum = expantionOrder[i];
+                                                        minFn = manhattan;
+                                                    }
+                                                }
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                    //LEFT
+                                    case 2:
+                                        for (int j = 0; j < character.idCostList.Count; j++)
+                                        {
+                                            //Si encuentra el id
+                                            if ((character.coordinateX - 1) > -1 && character.idCostList[j].id == mapa[character.coordinateY][character.coordinateX - 1].TerrainId)
+                                            {
+                                                // y este no es N/A
+                                                if (character.idCostList[j].cost > -1)
+                                                {
+                                                    double manhattan = Math.Sqrt(Math.Pow(finalXY.X - (character.coordinateX - 1), 2) + Math.Pow(finalXY.Y - character.coordinateY, 2));
+                                                    if (minimum == -1)
+                                                    {
+                                                        minimum = expantionOrder[i];
+                                                        minFn = manhattan;
+                                                    }
+                                                    else if (manhattan < minFn)
+                                                    {
+                                                        minimum = expantionOrder[i];
+                                                        minFn = manhattan;
+                                                    }
+                                                }
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                    //RIGHT
+                                    case 3:
+                                        for (int j = 0; j < character.idCostList.Count; j++)
+                                        {
+                                            //Si encuentra el id
+                                            if ((character.coordinateX + 1) < mapa[0].Count && character.idCostList[j].id == mapa[character.coordinateY][character.coordinateX + 1].TerrainId)
+                                            {
+                                                // y este no es N/A
+                                                if (character.idCostList[j].cost > -1)
+                                                {
+                                                        double manhattan = Math.Sqrt(Math.Pow(finalXY.X - (character.coordinateX + 1), 2) + Math.Pow(finalXY.Y - character.coordinateY, 2));
+                                                        if (minimum == -1)
+                                                        {
+                                                            minimum = expantionOrder[i];
+                                                            minFn = manhattan;
+                                                        }
+                                                        else if (manhattan < minFn)
+                                                        {
+                                                            minimum = expantionOrder[i];
+                                                            minFn = manhattan;
+                                                        }
+                                                }
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                }
+                            }
+                            switch (minimum)
+                            {
+                                case 0:
+                                    MoveCharacterUp();
+                                    break;
+                                case 1:
+                                    MoveCharacterDown();
+                                    break;
+                                case 2:
+                                    MoveCharacterLeft();
+                                    break;
+                                case 3:
+                                    MoveCharacterRight();
+                                    break;
+                            }
+                            Thread.Sleep(1000);
+                        }
                     }
                 }
 
@@ -361,7 +490,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                     // y este no es N/A
                     if (character.idCostList[i].cost > -1)
                     {
-                        if (character.coordinateX > 0) character.coordinateX -= 1;
+                        character.coordinateX -= 1;
                         moved = true;
                     }
                     break;
@@ -392,7 +521,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                     // y este no es N/A
                     if (character.idCostList[i].cost > -1)
                     {
-                        if (character.coordinateX < mapa[0].Count - 1) character.coordinateX += 1;
+                        character.coordinateX += 1;
                         moved = true;
                     }
                     break;
@@ -423,7 +552,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                     // y este no es N/A
                     if (character.idCostList[i].cost > -1)
                     {
-                        if (character.coordinateY > 0) character.coordinateY -= 1;
+                        character.coordinateY -= 1;
                         moved = true;
                     }
                     break;
@@ -454,7 +583,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                     // y este no es N/A
                     if (character.idCostList[i].cost > -1)
                     {
-                        if (character.coordinateY < mapa.Count - 1) character.coordinateY += 1;
+                        character.coordinateY += 1;
                         moved = true;
                     }
                     break;
