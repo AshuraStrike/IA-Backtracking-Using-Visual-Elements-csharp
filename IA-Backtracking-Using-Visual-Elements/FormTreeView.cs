@@ -26,12 +26,21 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         private void FormTreeView_Load(object sender, EventArgs e)
         {   //Extract info root
+            string closed = "Abierto";
+            if (tree.root.isClosed()) closed = "Cerrado";
             char a = 'A';
             a += (char) tree.root.posX;
             treeView.Nodes.Add(a + "," + (tree.root.posY + 1) + " " +
                     " Numero de hijos: " + tree.root.numberOfChilds + " " +
-                    " Visitas: " + tree.root.visits());
+                    " Visitas: " + tree.root.visits() +" "+
+                    " Estado: "+ closed);
             tree.print(ref treeView);
+        }
+
+        private void FormTreeView_Resize(object sender, EventArgs e)
+        {
+            treeView.Width = this.Width - 35;
+            treeView.Height = this.Height - 58;
         }
     }
 }

@@ -8,16 +8,6 @@ C:\Users\Usuario\Documents\Visual Studio 2017\Projects\ProyectoIA\IA-Backtrackin
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\ProyectoIA\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.exe
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\ProyectoIA\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.pdb
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\ProyectoIA\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormMain.resources
-C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\bin\Debug\IA-Backtracking-Using-Visual-Elements.exe.config
-C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\bin\Debug\IA-Backtracking-Using-Visual-Elements.exe
-C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\bin\Debug\IA-Backtracking-Using-Visual-Elements.pdb
-C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormMain.resources
-C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.Properties.Resources.resources
-C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.csproj.GenerateResource.Cache
-C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.csproj.CoreCompileInputs.cache
-C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.exe
-C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.pdb
-C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormTerrains.resources
 C:\Users\David\Desktop\IA-Backtracking-Using-Visual-Elements-csharp\IA-Backtracking-Using-Visual-Elements\bin\Debug\IA-Backtracking-Using-Visual-Elements.exe.config
 C:\Users\David\Desktop\IA-Backtracking-Using-Visual-Elements-csharp\IA-Backtracking-Using-Visual-Elements\bin\Debug\IA-Backtracking-Using-Visual-Elements.exe
 C:\Users\David\Desktop\IA-Backtracking-Using-Visual-Elements-csharp\IA-Backtracking-Using-Visual-Elements\bin\Debug\IA-Backtracking-Using-Visual-Elements.pdb
@@ -51,9 +41,7 @@ C:\Users\David\Google Drive\CUCEI\Semestre 7\Inteligencia Artificial\Proyecto Fi
 C:\Users\David\Google Drive\CUCEI\Semestre 7\Inteligencia Artificial\Proyecto Final\Proyecto IA\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.exe
 C:\Users\David\Google Drive\CUCEI\Semestre 7\Inteligencia Artificial\Proyecto Final\Proyecto IA\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.pdb
 C:\Users\David\Desktop\IA-Backtracking-Using-Visual-Elements-csharp\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormNewCharacter.resources
-C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormNewCharacter.resources
 C:\Users\David\Desktop\IA-Backtracking-Using-Visual-Elements-csharp\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormTreeView.resources
-C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormTreeView.resources
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements-csharp\IA-Backtracking-Using-Visual-Elements\bin\Debug\IA-Backtracking-Using-Visual-Elements.exe.config
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements-csharp\IA-Backtracking-Using-Visual-Elements\bin\Debug\IA-Backtracking-Using-Visual-Elements.exe
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements-csharp\IA-Backtracking-Using-Visual-Elements\bin\Debug\IA-Backtracking-Using-Visual-Elements.pdb
@@ -67,5 +55,17 @@ C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements-csharp\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements-csharp\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.exe
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements-csharp\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.pdb
-C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.csprojAssemblyReference.cache
 C:\Users\David\Desktop\IA-Backtracking-Using-Visual-Elements-csharp\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\bin\Debug\IA-Backtracking-Using-Visual-Elements.exe.config
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\bin\Debug\IA-Backtracking-Using-Visual-Elements.exe
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\bin\Debug\IA-Backtracking-Using-Visual-Elements.pdb
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormMain.resources
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormNewCharacter.resources
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormTerrains.resources
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.FormTreeView.resources
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA_Backtracking_Using_Visual_Elements.Properties.Resources.resources
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.csproj.GenerateResource.cache
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.exe
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\AIProject\IA-Backtracking-Using-Visual-Elements\obj\Debug\IA-Backtracking-Using-Visual-Elements.pdb

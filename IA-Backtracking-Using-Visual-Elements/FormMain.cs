@@ -255,9 +255,6 @@ namespace IA_Backtracking_Using_Visual_Elements
 
         public void doBackTrack()
         {
-            visitedBT.Add(new Point(character.coordinateX, character.coordinateY));
-            routeBT.Add(new Point(character.coordinateX, character.coordinateY));
-
             for (int i = 0; i < expantionOrder.Count; i++)
             {
                 Thread.Sleep(slp);
@@ -270,6 +267,11 @@ namespace IA_Backtracking_Using_Visual_Elements
                         {
                             moved = MoveCharacterUp();
                             if (moved)
+                            {
+                                visitedBT.Add(new Point(character.coordinateX, character.coordinateY));
+                                routeBT.Add(new Point(character.coordinateX, character.coordinateY));
+                            }
+                            if (moved && playing)
                             {
                                 doBackTrack();
                             }
@@ -287,6 +289,11 @@ namespace IA_Backtracking_Using_Visual_Elements
                             moved = MoveCharacterDown();
                             if (moved)
                             {
+                                visitedBT.Add(new Point(character.coordinateX, character.coordinateY));
+                                routeBT.Add(new Point(character.coordinateX, character.coordinateY));
+                            }
+                            if (moved && playing)
+                            {
                                 doBackTrack();
                             }
                             if (moved && playing)
@@ -303,6 +310,11 @@ namespace IA_Backtracking_Using_Visual_Elements
                             moved = MoveCharacterLeft();
                             if (moved)
                             {
+                                visitedBT.Add(new Point(character.coordinateX, character.coordinateY));
+                                routeBT.Add(new Point(character.coordinateX, character.coordinateY));
+                            }
+                            if (moved && playing)
+                            {
                                 doBackTrack();
                             }
                             if (moved && playing)
@@ -318,6 +330,11 @@ namespace IA_Backtracking_Using_Visual_Elements
                         {
                             moved = MoveCharacterRight();
                             if (moved)
+                            {
+                                visitedBT.Add(new Point(character.coordinateX, character.coordinateY));
+                                routeBT.Add(new Point(character.coordinateX, character.coordinateY));
+                            }
+                            if (moved && playing)
                             {
                                 doBackTrack();
                             }
@@ -364,6 +381,8 @@ namespace IA_Backtracking_Using_Visual_Elements
                     visitedBT = new List<Point>();
                     routeBT = new List<Point>();
                     //Backtracking
+                    visitedBT.Add(new Point(character.coordinateX, character.coordinateY));
+                    routeBT.Add(new Point(character.coordinateX, character.coordinateY));
                     doBackTrack();
                     string result = "";
                     for(int i = 0; i < routeBT.Count; i++)
@@ -374,6 +393,7 @@ namespace IA_Backtracking_Using_Visual_Elements
                         if (i < routeBT.Count - 1) result += " -> ";
                     }
                     labelSteps.Text = result;
+                    ButtonTree.PerformClick();
                 }
                 else if(checkBoxAStar.Checked == true)
                 {

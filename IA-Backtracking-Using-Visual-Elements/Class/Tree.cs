@@ -31,6 +31,13 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
             this.numberOfChilds = numberOfChilds;
         }
 
+        public bool isClosed()
+        {
+            bool closed = false;
+            if (childList.Count >= numberOfChilds-1) closed = true;
+            return closed;
+        }
+
         public string visits()
         {
             string visits = "";
@@ -163,11 +170,14 @@ namespace IA_Backtracking_Using_Visual_Elements.Class
             if (node != null)
             {
                 //Extract info
+                string closed = "Abierto";
+                if (node.isClosed()) closed = "Cerrado";
                 char a = 'A';
                 a += (char) node.posX;
                 parentNode = parentNode.Nodes.Add(a+","+(node.posY+1)+"\n"+
                     " Numero de hijos: "+node.numberOfChilds+'\n'+
-                    " Visitas: "+node.visits());
+                    " Visitas: "+node.visits() + " " +
+                    " Estado: " + closed);
             }
 
             for (int i = 0; i < node.childList.Count; i++)
